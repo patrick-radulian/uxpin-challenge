@@ -1,3 +1,4 @@
 .separator {
     height: 1px;
+    background: var(--grey-200);
 }

@@ -3,7 +3,7 @@ import * as CSS from "csstype";
 import styles from "./bar.module.css";
 
 type BarProps = {
-    children?: React.ReactElement | Array<React.ReactElement>,
+    children?: React.ReactElement | Array<React.ReactElement>
     style?: CSS.Properties
 }
 

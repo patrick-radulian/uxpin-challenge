@@ -10,7 +10,7 @@ const App: React.FC<{}> = () => {
     return (
         <div className="App">
             <main className="main">
-                <Bar style={{height: "40px", alignItems: "center"}}>
+                <Bar style={{padding: "8px", alignItems: "center"}}>
                     <BarItemGroup justify="left">
                         <IconButton iconSrc={Dashboard} alt="Dashboard"/>
                         <Separator vertical/>

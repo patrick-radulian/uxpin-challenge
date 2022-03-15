@@ -1,0 +1,5 @@
+.bar-item-group {
+    align-items: center;
+    display: flex;
+    height: 100%;
+}
