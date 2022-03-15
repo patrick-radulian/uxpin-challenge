@@ -10,7 +10,7 @@ const App: React.FC<{}> = () => {
     return (
         <div className="App">
             <main className="main">
-                <Bar>
+                <Bar height={40}>
                     <BarItemGroup justify="left">
                         <IconButton icon={Dashboard} alt="Dashboard"/>
                     </BarItemGroup>
@@ -20,7 +20,7 @@ const App: React.FC<{}> = () => {
                     </BarItemGroup>
                 </Bar>
 
-                <Separator/>
+                <Separator style={{borderColor: "var(--grey-200)"}}/>
             </main>
         </div>
     );

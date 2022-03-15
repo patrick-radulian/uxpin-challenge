@@ -1,8 +1,13 @@
 import React from 'react';
+import styles from "./separator.module.css";
 
-const Separator: React.FC<{}> = () => {
+type SeparatorProps = {
+    style?: React.CSSProperties
+}
+
+const Separator: React.FC<SeparatorProps> = (props: SeparatorProps) => {
     return (
-        <hr/>
+        <hr className={styles.separator} style={props.style}/>
     )
 }
 
