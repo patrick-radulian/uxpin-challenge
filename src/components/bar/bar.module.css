@@ -1,0 +1,5 @@
+.bar {
+    align-items: center;
+    border: 1px solid var();
+    display: flex;
+}
