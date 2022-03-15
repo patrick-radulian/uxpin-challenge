@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url(./theming/colors.css);
 
 body,
 html {
@@ -10,4 +11,8 @@ body {
     font-family: "Lato", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+    height: 100%;
 }
