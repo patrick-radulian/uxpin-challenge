@@ -6,6 +6,7 @@ import IconButton from 'components/atoms/icon-button/icon-button';
 import Dashboard from "./icons/dashboard.svg";
 import BarItemGroup from 'components/atoms/bar-item-group/bar-item-group';
 import Breadcrumbs from 'components/atoms/breadcrumbs/breadcrumbs';
+import Link from 'components/link/link';
 
 const App: React.FC<{}> = () => {
     return (
@@ -20,7 +21,7 @@ const App: React.FC<{}> = () => {
                     </BarItemGroup>
 
                     <BarItemGroup justify="right">
-                        <span>Discard Changes</span>
+                        <Link linkTo='https://google.com'>Discard Changes</Link>
                     </BarItemGroup>
                 </Bar>
 
