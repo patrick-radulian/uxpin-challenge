@@ -10,9 +10,10 @@ const App: React.FC<{}> = () => {
     return (
         <div className="App">
             <main className="main">
-                <Bar height="40" alignItems="">
+                <Bar style={{height: "40px", alignItems: "center"}}>
                     <BarItemGroup justify="left">
                         <IconButton iconSrc={Dashboard} alt="Dashboard"/>
+                        <Separator vertical/>
                     </BarItemGroup>
 
                     <BarItemGroup justify="right">
