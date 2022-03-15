@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import Bar from 'components/bar/bar';
-import Separator from 'components/separator/separator';
-import IconButton from 'components/icon-button/icon-button';
+import Bar from 'components/atoms/bar/bar';
+import Separator from 'components/atoms/separator/separator';
+import IconButton from 'components/atoms/icon-button/icon-button';
 import Dashboard from "./icons/dashboard.svg";
-import BarItemGroup from 'components/bar-item-group/bar-item-group';
+import BarItemGroup from 'components/atoms/bar-item-group/bar-item-group';
 
 const App: React.FC<{}> = () => {
     return (
@@ -12,7 +12,7 @@ const App: React.FC<{}> = () => {
             <main className="main">
                 <Bar height="40" alignItems="">
                     <BarItemGroup justify="left">
-                        <IconButton icon={Dashboard} alt="Dashboard"/>
+                        <IconButton iconSrc={Dashboard} alt="Dashboard"/>
                     </BarItemGroup>
 
                     <BarItemGroup justify="right">
