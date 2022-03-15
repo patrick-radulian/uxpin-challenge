@@ -3,12 +3,13 @@ import * as CSS from "csstype";
 import styles from "./separator.module.css";
 
 type SeparatorProps = {
-    color?: CSS.Property.Color
+    color?: CSS.Property.Color,
+    vertical?: boolean
 }
 
 const Separator: React.FC<SeparatorProps> = (props: SeparatorProps) => {
     return (
-        <hr className={styles.separator} style={{borderColor: props.color}}/>
+        <div className={styles.separator} style={{background: props.color}}/>
     )
 }
 
