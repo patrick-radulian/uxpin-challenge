@@ -1,9 +1,11 @@
 import React from "react";
+import * as CSS from "csstype";
 import styles from "./bar.module.css";
 
 type BarProps = {
     children?: React.ReactElement | Array<React.ReactElement>,
-    height?: number
+    height?: CSS.Property.Height,
+    alignItems?: CSS.Property.AlignItems
 }
 
 const Bar: React.FC<BarProps> = (props: BarProps) => {

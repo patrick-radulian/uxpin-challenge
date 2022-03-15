@@ -1,7 +1,8 @@
 import React from 'react';
+import * as CSS from "csstype";
 
 type BarItemProps = {
-    justify: "left" | "middle" | "right",
+    justify?: CSS.Property.JustifySelf,
     children?: React.ReactElement | Array<React.ReactElement>
 }
 
