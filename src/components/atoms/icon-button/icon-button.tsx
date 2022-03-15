@@ -10,7 +10,7 @@ type IconButtonProps = {
 
 const IconButton: React.FC<IconButtonProps> = (props: IconButtonProps) => {
     return (
-        <button className={styles['icon-button']}>
+        <button className={styles['icon-button']} style={props.style}>
             <img src={props.iconSrc} alt={props.alt}/>
         </button>
     )

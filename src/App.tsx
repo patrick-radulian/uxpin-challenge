@@ -5,6 +5,7 @@ import Separator from 'components/atoms/separator/separator';
 import IconButton from 'components/atoms/icon-button/icon-button';
 import Dashboard from "./icons/dashboard.svg";
 import BarItemGroup from 'components/atoms/bar-item-group/bar-item-group';
+import Breadcrumbs from 'components/atoms/breadcrumbs/breadcrumbs';
 
 const App: React.FC<{}> = () => {
     return (
@@ -12,8 +13,10 @@ const App: React.FC<{}> = () => {
             <main className="main">
                 <Bar style={{padding: "8px", alignItems: "center"}}>
                     <BarItemGroup justify="left">
-                        <IconButton iconSrc={Dashboard} alt="Dashboard"/>
+                        <IconButton iconSrc={Dashboard} style={{marginRight: "11px"}} alt="Dashboard"/>
                         <Separator vertical/>
+
+                        <Breadcrumbs crumbs={["Material UI", "Button"]}/>
                     </BarItemGroup>
 
                     <BarItemGroup justify="right">

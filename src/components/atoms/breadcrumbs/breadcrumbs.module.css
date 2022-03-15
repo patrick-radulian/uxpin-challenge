@@ -1,0 +1,17 @@
+.breadcrumbs {
+    margin-left: 16px;
+}
+
+.crumb {
+    color: var(--grey-800);
+    font-size: 15px;
+}
+
+.crumb:last-of-type {
+    color: var(--grey-1000);
+    font-weight: 700;
+}
+
+.crumb-separator {
+    margin: 0 0.5ch;
+}
