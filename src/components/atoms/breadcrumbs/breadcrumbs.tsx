@@ -9,7 +9,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = (props: BreadcrumbsProps) => {
     return (
         <div className={styles.breadcrumbs}>
             {props.crumbs.map((crumb, index, array) => (
-                <React.Fragment>
+                <React.Fragment key={crumb}>
                     <span className={styles.crumb}>{crumb}</span>
                     {index < array.length - 1 && <span className={styles["crumb-separator"]}>/</span>}
                 </React.Fragment>
