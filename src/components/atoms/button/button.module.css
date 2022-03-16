@@ -1,0 +1,19 @@
+.button {
+    align-items: center;
+    background: none;
+    border: none;
+    border-radius: 2px;
+    display: inline-flex;
+    padding: 0 10px;
+}
+
+.button:global(.default):global(.heavy) {
+    background: var(--blue-base);
+    color: white;
+}
+
+.button:global(.small) {
+    font-size: 12px;
+    height: 24px;
+    line-height: 16px;
+}
