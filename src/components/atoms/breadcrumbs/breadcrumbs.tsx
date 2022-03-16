@@ -7,7 +7,7 @@ type BreadcrumbsProps = {
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = (props: BreadcrumbsProps) => {
     return (
-        <div className={styles.breadcrumbs}>
+        <div>
             {props.crumbs.map((crumb, index, array) => (
                 <React.Fragment key={crumb}>
                     <span className={styles.crumb}>{crumb}</span>
