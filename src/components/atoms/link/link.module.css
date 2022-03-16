@@ -1,5 +1,5 @@
 .link {
-    color: var(--grey-900);
+    color: var(--gray-lighten10);
     font-size: 14px;
     height: 24px;
     line-height: 24px;
@@ -8,7 +8,7 @@
 }
 
 .link-decoration {
-    background: var(--grey-900);
+    background: var(--gray-lighten10);
     bottom: 4px;
     height: 1px;
     opacity: 0.3;

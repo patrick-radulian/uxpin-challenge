@@ -6,8 +6,8 @@
 .main {
     background: var(--white);
     box-shadow: var(--shade-light) 0px 10px 50px 0px;
-    border-left: 1px solid var(--grey-200);
-    border-right: 1px solid var(--grey-200);
+    border-left: 1px solid var(--silver-darken5);
+    border-right: 1px solid var(--silver-darken5);
     height: 100%;
     margin: 0 auto;
     width: 1440px;

@@ -2,21 +2,63 @@
     --white: #FFF;
     --black: #000;
 
-    --grey-1000: #373737;
-    --grey-950: #515151;
-    --grey-900: #5E5E5E;
-    --grey-800: #777;
-    --grey-700: #848484;
-    --grey-600: #C0C0C0;
-    --grey-500: #CDCDCD;
-    --grey-400: #D9D9D9;
-    --grey-300: #DADADA;
-    --grey-200: #E6E6E6;
-    --grey-100: #F0F0F0;
+    --gray-base: #444444;
+    --gray-darken25: #040404;
+    --gray-darken20: #111111;
+    --gray-darken15: #1E1E1E;
+    --gray-darken10: #2A2A2A;
+    --gray-darken5: #373737;
+    --gray-darken1: #414141;
+    --gray-lighten1: #4A4A4A;
+    --gray-lighten5: #515151;
+    --gray-lighten10: #5E5E5E;
+    --gray-lighten15: #6A6A6A;
+    --gray-lighten20: #777777;
+    --gray-lighten25: #848484;
+    --gray-lighten30: #8C8C8C;
 
-    --accent: #006CFF;
+    --silver-base: #F3F3F3;
+    --silver-darken30: #A6A6A6;
+    --silver-darken25: #B3B3B3;
+    --silver-darken20: #C0C0C0;
+    --silver-darken15: #CDCDCD;
+    --silver-darken10: #DADADA;
+    --silver-darken5: #E6E6E6;
+    --silver-darken1: #F0F0F0;
+    --silver-lighten1: #F6F6F6;
+
+    --blue-base: #006CFF;
+    --blue-darken30: #002B66;
+    --blue-darken15: #004CB3;
+    --blue-darken10: #0056CC;
+    --blue-darken5: #006AE6;
+    --blue-lighten5: #1A7BFF;
+    --blue-lighten10: #3389FF;
+    --blue-lighten15: #4D98FF;
+    --blue-lighten30: #99C4FF;
+
+    --green-base: #63AD0E;
+    --green-darken25: #203704;
+    --green-darken15: #3A6608;
+    --green-darken5: #55950C;
+    --green-lighten5: #70C510;
+    --green-lighten15: #8BED18;
+    --green-lighten25: #A3F04A;
+
+    --red-base: #E20C00;
+    --red-darken15: #950800;
+    --red-darken10: #AF0900;
+    --red-darken5: #C80B00;
+    --red-lighten5: #FB0D00;
+    --red-lighten15: #FF3A2F;
+    --red-lighten25: #FF6B62;
 
     --shade-light: #0000000D;
     --shade-medium: #00000066;
     --shade-hard: #111111E6;
+
+
+
+
+
 }

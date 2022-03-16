@@ -1,10 +1,10 @@
 .crumb {
-    color: var(--grey-800);
+    color: var(--gray-lighten20);
     font-size: 15px;
 }
 
 .crumb:last-of-type {
-    color: var(--grey-1000);
+    color: var(--gray-darken5);
     font-weight: 700;
 }
 
