@@ -1,12 +1,20 @@
-.tooltip {
+:global(.tooltip) {
     background: var(--shade-hard);
     border-radius: 2px;
     color: var(--grey-500);
+    display: none;
     font-size: 12px;
     height: 24px;
     line-height: 24px;
     padding: 0 10px;
-    position: relative;
+    position: absolute;
+    white-space: nowrap;
+}
+
+:global(.tooltip):global(.bottom) {
+    top: calc(100% + 6px);
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 .triangle {
@@ -16,4 +24,9 @@
     left: 8px;
     position: absolute;
     top: -5px;
+}
+
+:global(.tooltip):global(.bottom) .triangle {
+    top: -5px;
+    left: calc(50% - 5px);
 }

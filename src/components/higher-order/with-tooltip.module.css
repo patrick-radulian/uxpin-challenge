@@ -1,0 +1,12 @@
+.wrapper {
+    display: flex;
+    position: relative;
+}
+
+.wrapper:hover :global(.tooltip) {
+    display: block;
+}
+
+.with-tooltip {
+    position: relative;
+}
