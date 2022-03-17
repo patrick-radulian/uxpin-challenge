@@ -3,12 +3,10 @@
     border: none;
     border-radius: 2px;
     display: inline-block;
-    height: 24px;
     line-height: 0;
     margin: 0;
     padding: 5px;
     transition: background 0.2s ease;
-    width: 24px;
 }
 
 .icon-button:hover {
