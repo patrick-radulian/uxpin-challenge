@@ -13,23 +13,23 @@ type IconButtonProps = {
     iconColor?: CSS.Property.Fill
 }
 
-const IconButton: React.FC<IconButtonProps> = (props: IconButtonProps) => {
+const IconButton: React.FC<IconButtonProps> = ({iconSrc, height = 24, width = 24, iconHeight = 12, iconWidth = 12, iconColor = "var(--gray-lighten10)"}: IconButtonProps) => {
     const btnStyle: CSS.Properties<string | number> = {
-        height: props.height,
-        width: props.width
+        height,
+        width
     }
 
     const setSvgStyle = (svg: SVGSVGElement) => {
-        const width = props.iconWidth ? `width: ${props.iconWidth}px` : "";
-        const height = props.iconHeight ? `height: ${props.iconHeight}px` : "";
-        const fill = props.iconColor ? `fill: ${props.iconColor}` : "";
+        const width = `width: ${iconWidth}px`;
+        const height = `height: ${iconHeight}px`;
+        const fill = `fill: ${iconColor}`;
 
         return svg.setAttribute("style", `${width}; ${height}; ${fill};`);
     }
 
     return (
         <button className={styles['icon-button']} style={btnStyle}>
-            <ReactSVG src={props.iconSrc} beforeInjection={svg => setSvgStyle(svg)}/>
+            <ReactSVG src={iconSrc} beforeInjection={svg => setSvgStyle(svg)}/>
         </button>
     )
 }
