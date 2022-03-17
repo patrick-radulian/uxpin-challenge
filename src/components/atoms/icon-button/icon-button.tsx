@@ -5,7 +5,6 @@ import { ReactSVG } from 'react-svg';
 
 type IconButtonProps = {
     iconSrc: string
-    alt: string
     style?: CSS.Properties
 }
 

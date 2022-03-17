@@ -15,7 +15,7 @@ const TopBar: React.FC<{}> = () => {
     return (
         <Bar style={{padding: "8px", alignItems: "center"}}>
             <BarItemGroup justify="left">
-                <IconButtonWithTooltip iconSrc={LayoutMediumTileOutline} alt="Dashboard" tooltip='Open Dashboard' tooltipPosition='bottom'/>
+                <IconButtonWithTooltip iconSrc={LayoutMediumTileOutline} tooltip='Open Dashboard' tooltipPosition='bottom'/>
                 <Separator vertical margin="0 16px 0 11px"/>
 
                 <Breadcrumbs crumbs={["Material UI", "Button"]}/>
