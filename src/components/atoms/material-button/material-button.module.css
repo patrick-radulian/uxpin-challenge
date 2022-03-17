@@ -1,0 +1,22 @@
+.material-button {
+    align-items: center;
+    border-radius: 4px;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.material-button:global(.large) {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    height: 42px;
+    padding: 0 22px;
+}
+
+.material-button:global(.primary) {
+    color: var(--white);
+    background: #3F51B5;
+}
+
+.material-button:global(.fullWidth) {
+    width: 100%;
+}

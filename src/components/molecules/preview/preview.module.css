@@ -1,3 +1,7 @@
 .preview {
+    align-content: space-between;
+    display: grid;
+    height: 90px;
     margin: 28px 43px 0;
+    width: 300px;
 }

@@ -1,4 +1,4 @@
-import Button from "components/atoms/button/button";
+import MaterialButton from "components/atoms/material-button/material-button";
 import Typography from "components/atoms/typography/typography";
 import React from "react"
 import styles from "./preview.module.css";
@@ -11,7 +11,7 @@ const Preview: React.FC<PreviewProps> = (props: PreviewProps) => {
     return (
         <div className={styles.preview}>
             <Typography variant="h4">Component Preview</Typography>
-            <Button>SIGN UP</Button>
+            <MaterialButton size="large" fullWidth>SIGN UP</MaterialButton>
         </div>
     )
 }
