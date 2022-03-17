@@ -8,15 +8,14 @@ import Gear from "icons/gear.svg";
 import withTooltip from "components/higher-order/with-tooltip";
 import ToggleButton from "components/atoms/toggle-button/toggle-button";
 
-const IconButtonWithTooltip = withTooltip(IconButton);
 const ToggleButtonWithTooltip = withTooltip(ToggleButton);
+const IconButtonWithTooltip = withTooltip(IconButton);
 
 const Header: React.FC<{}> = () => {
     return (
         <div className={styles.header}>
             <Typography variant="h2">Button</Typography>
             <ToggleButtonWithTooltip iconSources={[VisibilityVisible, VisibilityHidden]} style={{marginLeft: "4px"}} tooltip={`Toggle component\nvisibility in library`}/>
-            <IconButtonWithTooltip iconSrc={VisibilityVisible} style={{marginLeft: "4px"}} tooltip={`Toggle component\nvisibility in library`}/>
             <IconButtonWithTooltip iconSrc={Gear} style={{marginLeft: "5px"}} tooltip="Component settings"/>
         </div>
     )

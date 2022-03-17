@@ -3,11 +3,12 @@
     box-shadow: var(--shade-light) 0px 10px 50px 0px;
     border-left: 1px solid var(--silver-darken5);
     border-right: 1px solid var(--silver-darken5);
+    display: flex;
     height: 100%;
     margin: 0 auto;
     width: 1440px;
 }
 
 .main {
-    margin: 45px 43px 0;
+    width: 1182px;
 }

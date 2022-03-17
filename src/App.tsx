@@ -9,15 +9,15 @@ import Properties from 'components/organisms/properties/properties';
 const App: React.FC<{}> = () => {
     return (
         <div className="App">
-            <TopBar/>
-
-            <Separator color="var(--silver-darken5)"/>
-
-            <main className="main">
+            <div className="main">
+                <TopBar/>
+                <Separator color="var(--silver-darken5)"/>
                 <Header/>
                 <Preview/>
                 <Properties/>
-            </main>
+            </div>
+
+            <Separator vertical/>
         </div>
     );
 }
