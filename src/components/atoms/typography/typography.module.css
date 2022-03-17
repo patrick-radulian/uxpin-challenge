@@ -1,0 +1,33 @@
+.typography {
+    color: var(--gray-lighten10);
+}
+
+.typography:global(.base) {
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.typography:global(.small) {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.typography:global(.h2) {
+    color: var(--gray-darken5);
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 40px;
+}
+
+.typography:global(.h4) {
+    color: var(--gray-darken5);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+.typography:global(.h6) {
+    color: var(--gray-darken5);
+    font-size: 18px;
+    line-height: 24px;
+}
