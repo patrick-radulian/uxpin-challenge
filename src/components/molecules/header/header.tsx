@@ -5,8 +5,8 @@ import Typography from "components/atoms/typography/typography";
 import VisibilityVisible from "icons/visibility-visible.svg";
 import VisibilityHidden from "icons/visibility-hidden.svg";
 import Gear from "icons/gear.svg";
-import withTooltip from "components/higher-order/with-tooltip";
 import ToggleButton from "components/atoms/toggle-button/toggle-button";
+import withTooltip from "components/higher-order/with-tooltip/with-tooltip";
 
 const ToggleButtonWithTooltip = withTooltip(ToggleButton);
 const IconButtonWithTooltip = withTooltip(IconButton);

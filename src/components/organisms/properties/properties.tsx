@@ -1,4 +1,5 @@
 import React from "react"
+import styles from "./properties.module.css"
 
 type PropertiesProps = {
 
@@ -6,7 +7,9 @@ type PropertiesProps = {
 
 const Properties: React.FC<PropertiesProps> = (props: PropertiesProps) => {
     return (
-        <div>Properties</div>
+        <div className={styles.properties}>
+            <div className={styles.header}></div>
+        </div>
     )
 }
 

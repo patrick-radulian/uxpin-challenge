@@ -5,9 +5,9 @@ import LayoutMediumTileOutline from "icons/layout-medium-tile-outline.svg";
 import BarItemGroup from 'components/atoms/bar-item-group/bar-item-group';
 import Breadcrumbs from 'components/atoms/breadcrumbs/breadcrumbs';
 import Link from 'components/atoms/link/link';
-import withTooltip from 'components/higher-order/with-tooltip';
 import Button from 'components/atoms/button/button';
 import Separator from "components/atoms/separator/separator";
+import withTooltip from "components/higher-order/with-tooltip/with-tooltip";
 
 const IconButtonWithTooltip = withTooltip(IconButton);
 
