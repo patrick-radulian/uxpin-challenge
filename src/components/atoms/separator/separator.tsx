@@ -5,11 +5,11 @@ import styles from "./separator.module.css";
 type SeparatorProps = {
     color?: CSS.Property.Color
     vertical?: boolean
-    margin?: CSS.Property.Margin
+    margin?: CSS.Property.Margin<string | number>
 }
 
 const Separator: React.FC<SeparatorProps> = (props: SeparatorProps) => {
-    const style: CSS.Properties = {
+    const style: CSS.Properties<string | number> = {
         color: props.color,
         height: props.vertical ? "100%" : "1px",
         width: props.vertical ? "1px" : "100%",
