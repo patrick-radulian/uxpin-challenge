@@ -1,6 +1,7 @@
 import React from 'react';
 import * as CSS from "csstype"
 import styles from './icon-button.module.css';
+import { ReactSVG } from 'react-svg';
 
 type IconButtonProps = {
     iconSrc: string
@@ -11,7 +12,7 @@ type IconButtonProps = {
 const IconButton: React.FC<IconButtonProps> = (props: IconButtonProps) => {
     return (
         <button className={styles['icon-button']} style={props.style}>
-            <img src={props.iconSrc} alt={props.alt}/>
+            <ReactSVG src={props.iconSrc}/>
         </button>
     )
 }
