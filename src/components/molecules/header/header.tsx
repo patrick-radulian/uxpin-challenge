@@ -1,8 +1,11 @@
+import Typography from "components/atoms/typography/typography";
 import React from "react";
 
 const Header: React.FC<{}> = () => {
     return (
-        <div>Header</div>
+        <div>
+            <Typography variant="h2">Button</Typography>
+        </div>
     )
 }
 
