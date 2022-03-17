@@ -10,6 +10,7 @@ type IconButtonProps = {
     width?: CSS.Property.Width<string | number>
     iconHeight?: CSS.Property.Height<string | number>
     iconWidth?: CSS.Property.Width<string | number>
+    iconColor?: CSS.Property.Fill
 }
 
 const IconButton: React.FC<IconButtonProps> = (props: IconButtonProps) => {
@@ -21,8 +22,9 @@ const IconButton: React.FC<IconButtonProps> = (props: IconButtonProps) => {
     const setSvgStyle = (svg: SVGSVGElement) => {
         const width = props.iconWidth ? `width: ${props.iconWidth}px` : "";
         const height = props.iconHeight ? `height: ${props.iconHeight}px` : "";
+        const fill = props.iconColor ? `fill: ${props.iconColor}` : "";
 
-        return svg.setAttribute("style", `${width}; ${height};`);
+        return svg.setAttribute("style", `${width}; ${height}; ${fill};`);
     }
 
     return (
