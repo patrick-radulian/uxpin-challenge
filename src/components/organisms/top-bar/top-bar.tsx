@@ -9,7 +9,6 @@ import withTooltip from 'components/higher-order/with-tooltip';
 import Button from 'components/atoms/button/button';
 import Separator from "components/atoms/separator/separator";
 
-const LinkWithTooltip = withTooltip(Link);
 const IconButtonWithTooltip = withTooltip(IconButton);
 
 const TopBar: React.FC<{}> = () => {
@@ -23,7 +22,7 @@ const TopBar: React.FC<{}> = () => {
             </BarItemGroup>
 
             <BarItemGroup justify="right">
-                <LinkWithTooltip tooltip='Here, there be tooltip' linkTo="https://google.com">Discard Changes</LinkWithTooltip>
+                <Link linkTo="">Discard Changes</Link>
                 <Button style={{margin: "0 7px"}}>Save Changes</Button>
             </BarItemGroup>
         </Bar>

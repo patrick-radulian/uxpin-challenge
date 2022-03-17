@@ -1,9 +1,4 @@
 .App {
-    height: 100%;
-    background: #F3F3F3;
-}
-
-.main {
     background: var(--white);
     box-shadow: var(--shade-light) 0px 10px 50px 0px;
     border-left: 1px solid var(--silver-darken5);
@@ -11,4 +6,8 @@
     height: 100%;
     margin: 0 auto;
     width: 1440px;
+}
+
+.main {
+
 }
