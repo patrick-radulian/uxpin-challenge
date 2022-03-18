@@ -15,6 +15,34 @@ body {
 }
 
 #root {
-    background: #F3F3F3;
+    background: var(--silver-base);
     height: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    overflow: visible;
+}
+
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-track-piece {
+    display: none;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    background-clip: padding-box;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 6px;
+    background-color: var(--silver-base);
+}
+
+::selection {
+    background: #006cff;
+    color: var(--white);
 }
