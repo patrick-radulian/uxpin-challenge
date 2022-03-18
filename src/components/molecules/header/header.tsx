@@ -15,7 +15,7 @@ const Header: React.FC<{}> = () => {
     return (
         <div className={styles.header}>
             <Typography variant="h2">Button</Typography>
-            <ToggleButtonWithTooltip iconSources={[VisibilityVisible, VisibilityHidden]} style={{marginLeft: "4px"}} tooltip={`Toggle component\nvisibility in library`}/>
+            <ToggleButtonWithTooltip iconSources={[VisibilityVisible, VisibilityHidden]} style={{marginLeft: "8px"}} tooltip={`Toggle component\nvisibility in library`}/>
             <IconButtonWithTooltip iconSrc={Gear} style={{marginLeft: "5px"}} tooltip="Component settings"/>
         </div>
     )
