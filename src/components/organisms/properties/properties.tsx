@@ -15,7 +15,7 @@ const Properties: React.FC<PropertiesProps> = (props: PropertiesProps) => {
             <div className={styles.header}>
                 <Typography variant="h4">Properties</Typography>
 
-                <Link linkTo="" iconSrc={Plus} iconSize={8} style={{color: "var(--blue-base)"}}>Add new property</Link>
+                <Link linkTo="" iconSrc={Plus} iconWidth={7} iconHeight={8} style={{color: "var(--blue-base)", marginBottom: "2px"}}>Add new property</Link>
             </div>
 
             <div className={styles.list}>

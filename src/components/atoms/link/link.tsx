@@ -9,12 +9,13 @@ type LinkProps = {
     underline?: boolean
     iconSrc?: string
     iconPosition?: "start" | "end"
-    iconSize?: number
+    iconWidth?: number
+    iconHeight?: number
     style?: CSS.Properties
 }
 
-const Link: React.FC<LinkProps> = ({children, linkTo, underline = true, iconSrc, iconPosition = "start", iconSize = 12, style}: LinkProps) => {
-    const icon = iconSrc ? <SVG src={iconSrc} height={iconSize} width={iconSize} fill="currentColor"/> : null;
+const Link: React.FC<LinkProps> = ({children, linkTo, underline = true, iconSrc, iconPosition = "start", iconWidth = 12, iconHeight = 12, style}: LinkProps) => {
+    const icon = iconSrc ? <SVG src={iconSrc} height={iconHeight} width={iconWidth} fill="currentColor"/> : null;
 
     return (
         <a className={styles.link} href={linkTo} style={style}>
