@@ -1,4 +1,5 @@
 import React from "react"
+import Ripple from "../ripple/ripple"
 import styles from "./material-button.module.css"
 
 type MaterialButtonProps = {
@@ -9,15 +10,10 @@ type MaterialButtonProps = {
     fullWidth?: boolean
 }
 
-const MaterialButton: React.FC<MaterialButtonProps> = ({
-    children,
-    size = "default",
-    color = "primary",
-    variant = "contained",
-    fullWidth = false
-}: MaterialButtonProps) => {
+const MaterialButton: React.FC<MaterialButtonProps> = ({children, size = "default", color = "primary", variant = "contained", fullWidth = false}: MaterialButtonProps) => {
     return (
         <div className={`${styles["material-button"]} ${size} ${color} ${variant} ${fullWidth ? "fullWidth" : ""}`}>
+            <Ripple/>
             {children}
         </div>
     )

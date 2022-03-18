@@ -3,6 +3,7 @@
     background: none;
     border: none;
     border-radius: 2px;
+    box-sizing: border-box;
     display: inline-flex;
     padding: 0 10px;
 }

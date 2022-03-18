@@ -1,8 +1,10 @@
 .material-button {
     align-items: center;
     border-radius: 4px;
+    box-sizing: border-box;
     display: inline-flex;
     justify-content: center;
+    position: relative;
 }
 
 .material-button:global(.large) {
@@ -13,8 +15,8 @@
 }
 
 .material-button:global(.primary) {
-    color: var(--white);
     background: #3F51B5;
+    color: var(--white);
 }
 
 .material-button:global(.fullWidth) {

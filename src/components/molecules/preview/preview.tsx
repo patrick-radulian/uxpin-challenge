@@ -3,11 +3,7 @@ import Typography from "components/atoms/typography/typography";
 import React from "react"
 import styles from "./preview.module.css";
 
-type PreviewProps = {
-
-}
-
-const Preview: React.FC<PreviewProps> = (props: PreviewProps) => {
+const Preview: React.FC<{}> = () => {
     return (
         <div className={styles.preview}>
             <Typography variant="h4">Component Preview</Typography>
