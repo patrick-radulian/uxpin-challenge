@@ -1,5 +1,5 @@
 .typography {
-    color: var(--gray-lighten10);
+    color: inherit;
     white-space: pre;
 }
 
