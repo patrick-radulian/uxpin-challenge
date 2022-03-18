@@ -3,5 +3,6 @@
 }
 
 .header {
-
+    align-items: flex-end;
+    display: flex;
 }

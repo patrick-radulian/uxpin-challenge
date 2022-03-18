@@ -1,14 +1,21 @@
 .link {
+    align-items: center;
     color: var(--gray-lighten10);
+    display: inline-flex;
     font-size: 14px;
+    gap: 5px;
     height: 24px;
     line-height: 24px;
     margin: 0 7px;
     text-decoration: none;
 }
 
+.link-text {
+
+}
+
 .link-decoration {
-    background: var(--gray-lighten10);
+    background: currentColor;
     bottom: 4px;
     height: 1px;
     opacity: 0.3;
