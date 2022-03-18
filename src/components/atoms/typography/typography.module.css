@@ -1,5 +1,6 @@
 .typography {
     color: inherit;
+    display: inline-block;
     white-space: pre;
 }
 
