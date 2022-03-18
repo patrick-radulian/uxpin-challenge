@@ -1,5 +1,6 @@
 .bar-item-group {
     align-items: center;
     display: flex;
+    gap: 20px;
     height: 100%;
 }

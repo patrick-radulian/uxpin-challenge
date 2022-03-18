@@ -16,14 +16,14 @@ const TopBar: React.FC<{}> = () => {
         <Bar style={{padding: "8px", alignItems: "center"}}>
             <BarItemGroup justify="left">
                 <IconButtonWithTooltip iconSrc={LayoutMediumTileOutline} iconHeight={14} iconWidth={14} tooltip='Open Dashboard' tooltipPosition='bottom'/>
-                <Separator vertical margin="0 16px 0 11px"/>
+                <Separator vertical margin="0px -4px 0 -10px"/>
 
                 <Breadcrumbs crumbs={["Material UI", "Button"]}/>
             </BarItemGroup>
 
             <BarItemGroup justify="right">
                 <Link linkTo="">Discard Changes</Link>
-                <Button style={{margin: "0 7px"}}>Save Changes</Button>
+                <Button style={{marginRight: "10px"}}>Save Changes</Button>
             </BarItemGroup>
         </Bar>
     )
