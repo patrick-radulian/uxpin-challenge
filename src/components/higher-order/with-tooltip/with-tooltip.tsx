@@ -13,7 +13,7 @@ const withTooltip = <T extends object>(WrappedComponent: React.ComponentType<T>)
         return (
             <div className={styles.wrapper}>
                 <WrappedComponent className={styles["with-tooltip"]} {...(props as T)}/>
-                <Tooltip position={props.tooltipPosition}>{props.tooltip}</Tooltip>
+                {props.tooltip && <Tooltip position={props.tooltipPosition}>{props.tooltip}</Tooltip>}
             </div>
         )
     }
