@@ -11,9 +11,7 @@ const Input: React.FC<InputProps> = ({defaultValue = ""}: InputProps) => {
     const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value);
 
     return (
-        <div className={styles["input-wrapper"]}>
-            <input onChange={onChangeInput} type="text" className={styles.input} value={value}/>
-        </div>
+        <input onChange={onChangeInput} type="text" className={styles.input} value={value}/>
     )
 }
 

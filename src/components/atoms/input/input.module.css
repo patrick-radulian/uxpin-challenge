@@ -1,17 +1,13 @@
-.input-wrapper {
-    display: inline-block;
-    height: 24px;
-    width: 230px;
-}
-
 .input {
     border: none;
     border-bottom: 1px solid var(--silver-darken5);
     color: inherit;
+    display: inline-block;
     font-family: inherit;
     font-size: inherit;
+    height: 24px;
     line-height: inherit;
-    width: 100%;
+    width: 230px;
 }
 
 .input:focus {
