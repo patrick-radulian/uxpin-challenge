@@ -1,0 +1,47 @@
+.property {
+    align-items: start;
+    border-bottom: 1px solid var(--silver-darken5);
+    box-sizing: border-box;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    height: 47px;
+    padding: 7px 20px;
+}
+
+
+
+.property:global(.open) {
+    cursor: default;
+    height: auto;
+}
+
+.name {
+    align-items: center;
+    display: flex;
+    gap: 4px;
+    height: 32px;
+}
+
+.property.property:global(.disabled) .name {
+    opacity: 0.3;
+}
+
+.details {
+    display: grid;
+    font-size: 14px;
+    gap: 12px;
+    width: 523px;
+}
+
+.detail {
+    align-items: baseline;
+}
+
+.property:global(.disabled) .details {
+    color: var(--silver-darken5);
+}
+
+.toggle-icon {
+
+}

@@ -1,8 +1,13 @@
 .properties {
     margin: 81px 43px 0;
+    width: 820px;
 }
 
 .header {
     align-items: flex-end;
     display: flex;
+}
+
+.list {
+    margin-top: 17px;
 }
