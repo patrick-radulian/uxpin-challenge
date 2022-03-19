@@ -6,19 +6,20 @@
     display: grid;
     grid-template-columns: 1fr auto auto;
     height: 47px;
-    padding: 7px 20px 21px;
+    padding: 12px 20px 11px;
 }
 
 .property:global(.open) {
     cursor: default;
     height: auto;
+    padding: 12px 20px 21px;
 }
 
 .label {
     align-items: center;
     display: flex;
     gap: 5px;
-    height: 32px;
+    height: 24px;
 }
 
 .property.property:global(.disabled) .name {
