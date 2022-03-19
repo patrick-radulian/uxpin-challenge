@@ -48,7 +48,7 @@ const Properties: React.FC<{}> = () => {
             <div className={styles.header}>
                 <Typography variant="h4">Properties</Typography>
 
-                <Link linkTo="" iconSrc={Plus} iconWidth={7} iconHeight={8} style={{color: "var(--blue-base)", marginBottom: "2px"}}>
+                <Link iconSrc={Plus} iconWidth={7} iconHeight={8} style={{color: "var(--blue-base)", marginBottom: "2px"}}>
                     Add new property
                 </Link>
             </div>
