@@ -1,17 +1,16 @@
 import React from "react"
+import * as CSS from "csstype"
 import styles from "./input.module.css"
 
 type InputProps = {
-    defaultValue?: string
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+    value?: string
+    style?: CSS.Properties
 }
 
-const Input: React.FC<InputProps> = ({defaultValue = ""}: InputProps) => {
-    const [value, setValue] = React.useState<string>(defaultValue);
-
-    const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value);
-
+const Input: React.FC<InputProps> = ({onChange, value, style}: InputProps) => {
     return (
-        <input onChange={onChangeInput} type="text" className={styles.input} value={value}/>
+        <input onChange={onChange} type="text" className={styles.input} value={value} style={style}/>
     )
 }
 

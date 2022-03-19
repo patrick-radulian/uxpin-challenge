@@ -1,3 +1,17 @@
 .text-area {
+    border: 1px solid var(--silver-darken5);
+    box-sizing: border-box;
+    color: inherit;
     display: block;
+    font-family: inherit;
+    font-size: inherit;
+    height: 56px;
+    line-height: 16px;
+    padding: 3px 8px;
+    resize: none;
+    width: 100%;
+}
+
+.text-area:focus {
+    outline: none;
 }
