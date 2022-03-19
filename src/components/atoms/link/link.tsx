@@ -15,11 +15,21 @@ type LinkProps = {
     onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void
 }
 
-const Link: React.FC<LinkProps> = ({children, linkTo = "#", underline = true, iconSrc, iconPosition = "start", iconWidth = 12, iconHeight = 12, style}: LinkProps) => {
+const Link: React.FC<LinkProps> = ({
+    children,
+    linkTo = "#",
+    underline = true,
+    iconSrc,
+    iconPosition = "start",
+    iconWidth = 12,
+    iconHeight = 12,
+    style,
+    onClick
+}: LinkProps) => {
     const icon = iconSrc ? <SVG src={iconSrc} height={iconHeight} width={iconWidth} fill="currentColor"/> : null;
 
     return (
-        <a className={styles.link} href={linkTo} style={style}>
+        <a className={styles.link} href={linkTo} onClick={onClick} style={style}>
             {icon && iconPosition === "start" && icon}
 
             <div className={styles["link-text"]}>
