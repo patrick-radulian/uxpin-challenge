@@ -8,71 +8,57 @@ import Plus from "icons/plus.svg";
 import ActionClose from "icons/action-close.svg";
 import IconButton from "components/atoms/icon-button/icon-button";
 import withTooltip from "components/higher-order/with-tooltip/with-tooltip";
-import Input from "components/atoms/input/input";
-import TextArea from "components/atoms/text-area/text-area";
-import Select from "components/atoms/select/select";
+import PropertyField from "./property-field/property-field";
 
-type PropertyField = {
-    field: string
-    type: "input" | "textarea" | "select" | "switch"
-    value: string | boolean
-}
+type BaseType = { fieldName: string }
+
+type InputType = BaseType & { type: "input", value: string }
+
+type TextAreaType = BaseType & { type: "textarea", rows: number, hint: string, value: string }
+
+type SelectType = BaseType & { type: "select", value: string }
+
+type SwitchType = BaseType & { type: "switch", value: boolean }
+
+export type Field = InputType | TextAreaType | SelectType | SwitchType
 
 export type PropertyProps = {
-    name: string
-    fields: Array<PropertyField>
+    propertyName: string
+    fields: Array<Field>
+    onChange: (property: string, fieldName: string, value: string | boolean) => void
     disabled: boolean
 }
 
 const IconButtonWithTooltip = withTooltip(IconButton);
 
-const Property: React.FC<PropertyProps> = ({name, fields, disabled}: PropertyProps) => {
+const Property: React.FC<PropertyProps> = ({propertyName, fields, onChange, disabled}: PropertyProps) => {
     const [open, setOpened] = React.useState<boolean>(false);
-    const [propertyName, setPropertyName] = React.useState<string>(name);
-    const [displayName, setDisplayName] = React.useState<string>("");
-    const [description, setDescription] = React.useState<string>("Blablub");
-    // const [propertyType, setPropertyType] = React.useState<string>(type);
 
     const openDetails = () => setOpened(true);
 
     const closeDetails = () => setOpened(false);
 
-    const onChangePropertyName = (e: React.ChangeEvent<HTMLInputElement>) => setPropertyName(e.target.value);
-
-    const onChangeDisplayName = (e: React.ChangeEvent<HTMLInputElement>) => setDisplayName(e.target.value);
-
-    const onChangeDescription = (e: React.ChangeEvent<HTMLTextAreaElement>) => setDescription(e.target.value);
-
-    // const onChangePropertyType = (e: React.ChangeEvent<HTMLInputElement>) => setPropertyType(e.target.value);
+    const onPropertyChange = (fieldName: string, value: string | boolean) => {
+        onChange(propertyName, fieldName, value);
+    }
 
     return (
         <div onClick={open ? undefined : openDetails} className={`${styles.property} ${open ? "open" : ""} ${disabled ? "disabled" : ""}`}>
-            <div className={styles.name}>
-                <Typography variant="h6">{name}</Typography>
+            <div className={styles.label}>
+                <Typography className={styles.name} variant="h6">{propertyName}</Typography>
                 <IconButtonWithTooltip iconSrc={disabled ? VisibilityHidden : VisibilityVisible} tooltip={open ? "Hide property" : ""}/>
                 {open && <IconButtonWithTooltip iconSrc={Trash} tooltip={open ? "Delete property" : ""}/>}
             </div>
 
             {open && (
-                <div className={styles.details}>
-                    <div className={styles.detail}>
-                        <Typography>Property name</Typography> <Input onChange={onChangePropertyName} value={propertyName}/>
-                    </div>
-                    <div className={styles.detail}>
-                        <Typography>Display name</Typography> <Input onChange={onChangeDisplayName} value={displayName}/>
-                    </div>
-                    <div className={styles.detail}>
-                        <Typography>Description</Typography> <TextArea onChange={onChangeDescription} value={description}/>
-                    </div>
-                    <div className={styles.detail}>
-                        {/* <Typography>Property type</Typography> <Select onChange={onChangePropertyType} value={propertyType}/> */}
-                    </div>
+                <div className={styles.fields}>
+                    {fields.map((field, index) => (
+                        <PropertyField field={field} onChange={onPropertyChange} key={index}/>
+                    ))}
                 </div>
             )}
 
-            <div className={styles["toggle-icon"]}>
-                <IconButton onClick={open ? closeDetails : undefined} iconSrc={open ? ActionClose : Plus}/>
-            </div>
+            <IconButton onClick={open ? closeDetails : undefined} iconSrc={open ? ActionClose : Plus}/>
         </div>
     )
 }
