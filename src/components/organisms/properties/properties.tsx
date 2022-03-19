@@ -13,7 +13,11 @@ type PropertiesType = {
     }
 }
 
-const Properties: React.FC<{}> = () => {
+type PropertiesProps = {
+    sort?: "asc" | "desc"
+}
+
+const Properties: React.FC<PropertiesProps> = ({sort}: PropertiesProps) => {
     const [newPropertyVisibility, setNewPropertyVisibility] = React.useState<boolean>(false);
     const [properties, setProperties] = React.useState<PropertiesType>({});
 
@@ -47,6 +51,10 @@ const Properties: React.FC<{}> = () => {
         })
     }
 
+    const sortProperties = (a: string, b: string) => {
+        return (a < b ? -1 : 1) * (sort === "desc" ? -1 : 1);
+    }
+
     return (
         <div className={styles.properties}>
             <div className={styles.header}>
@@ -60,7 +68,7 @@ const Properties: React.FC<{}> = () => {
             {newPropertyVisibility && <NewProperty/>}
 
             <div className={styles.list}>
-                {Object.keys(properties).map((property, index) => (
+                {Object.keys(properties).sort(sortProperties).map((property, index) => (
                     <Property
                         propertyName={property}
                         fields={properties[property].fields}

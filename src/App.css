@@ -5,7 +5,7 @@
     border-right: 1px solid var(--silver-darken5);
     display: flex;
     height: 100%;
-    margin: 0 auto;
+    margin: 40px auto 0;
     width: 1440px;
 }
 
