@@ -7,8 +7,9 @@
     align-items: flex-end;
     display: flex;
     gap: 10px;
+    margin-bottom: 17px;
 }
 
 .list {
-    margin-top: 17px;
+
 }

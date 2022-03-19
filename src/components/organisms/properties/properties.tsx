@@ -14,7 +14,7 @@ type PropertiesType = {
 }
 
 const Properties: React.FC<{}> = () => {
-    const [newPropertyVisibility, setNewPropertyVisibility] = React.useState<boolean>(true);
+    const [newPropertyVisibility, setNewPropertyVisibility] = React.useState<boolean>(false);
     const [properties, setProperties] = React.useState<PropertiesType>({});
 
     const fetchMockData = React.useCallback(async () => {

@@ -8,7 +8,6 @@ import Plus from "icons/plus.svg";
 import ActionClose from "icons/action-close.svg";
 import IconButton from "components/atoms/icon-button/icon-button";
 import withTooltip from "components/higher-order/with-tooltip/with-tooltip";
-import PropertyField from "./property-body/property-field/property-field";
 import PropertyBody from "./property-body/property-body";
 
 type BaseType = { fieldName: string, hint?: string }
@@ -53,7 +52,7 @@ const Property: React.FC<PropertyProps> = ({propertyName, fields, onChange, disa
 
             {open && <PropertyBody fields={fields} onChange={onPropertyChange} disabled={disabled}/>}
 
-            <IconButton onClick={open ? closeDetails : undefined} iconSrc={open ? ActionClose : Plus}/>
+            <IconButton onClick={open ? closeDetails : undefined} iconSrc={open ? ActionClose : Plus} className={styles.action}/>
         </div>
     )
 }

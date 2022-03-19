@@ -6,13 +6,13 @@
     display: grid;
     grid-template-columns: 1fr auto auto;
     height: 47px;
-    padding: 12px 20px 11px;
+    padding: 0 20px;
 }
 
 .property:global(.open) {
     cursor: default;
     height: auto;
-    padding: 12px 20px 21px;
+    padding: 0 20px 21px;
 }
 
 .label {
@@ -20,8 +20,13 @@
     display: flex;
     gap: 5px;
     height: 24px;
+    margin: 12px 0;
 }
 
 .property.property:global(.disabled) .name {
     opacity: 0.3;
+}
+
+.action {
+    margin: 12px 0;
 }
