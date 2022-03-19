@@ -11,6 +11,7 @@ type ButtonProps = {
     iconSrc?: string
     disabled?: boolean
     style?: CSS.Properties
+    onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 const Button: React.FC<ButtonProps> = ({children, variant = "default", weight = "heavy", size, ...rest}: ButtonProps) => {
