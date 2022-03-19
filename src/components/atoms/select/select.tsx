@@ -1,9 +1,8 @@
 import React from "react"
 import * as CSS from "csstype"
+import styles from "./select.module.css"
 import SVG from "react-inlinesvg"
 import Chevron from "icons/chevron.svg"
-import styles from "./select.module.css"
-import Input from "../input/input"
 
 type SelectProps = {
     value: string
@@ -13,8 +12,8 @@ type SelectProps = {
 
 const Select: React.FC<SelectProps> = ({value, onChange, style}: SelectProps) => {
     return (
-        <div className={styles.select}>
-            <Input onChange={onChange} value={value}/>
+        <div className={styles.select} style={style}>
+            <input onChange={onChange} type="text" className={styles.input} value={value} style={style}/>
             <SVG src={Chevron}/>
         </div>
     )

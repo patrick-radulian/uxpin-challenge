@@ -1,3 +1,21 @@
 .select {
+    align-items: center;
+    border-bottom: 1px solid var(--silver-darken5);
+    display: flex;
+    width: 118px;
+}
 
+.input {
+    border: none;
+    color: inherit;
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    height: 24px;
+    line-height: inherit;
+    width: 100%;
+}
+
+.input:focus {
+    outline: none;
 }
