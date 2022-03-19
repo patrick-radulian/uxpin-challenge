@@ -4,7 +4,7 @@ import Switch from "components/atoms/switch/switch"
 import TextArea from "components/atoms/text-area/text-area"
 import Typography from "components/atoms/typography/typography"
 import React from "react"
-import { Field } from "../property"
+import { Field } from "../../property"
 import styles from "./property-field.module.css"
 
 type Props = {

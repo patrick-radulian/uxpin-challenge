@@ -24,15 +24,3 @@
 .property.property:global(.disabled) .name {
     opacity: 0.3;
 }
-
-.fields {
-    display: grid;
-    font-size: 14px;
-    gap: 12px;
-    padding: 0 14px;
-    width: 513px;
-}
-
-.property:global(.disabled) .fields {
-    color: var(--silver-darken5);
-}

@@ -8,13 +8,14 @@ import Plus from "icons/plus.svg";
 import ActionClose from "icons/action-close.svg";
 import IconButton from "components/atoms/icon-button/icon-button";
 import withTooltip from "components/higher-order/with-tooltip/with-tooltip";
-import PropertyField from "./property-field/property-field";
+import PropertyField from "./property-body/property-field/property-field";
+import PropertyBody from "./property-body/property-body";
 
 type BaseType = { fieldName: string, hint?: string }
 
 type InputType = BaseType & { type: "input", value: string }
 
-type TextAreaType = BaseType & { type: "textarea", rows: number, value: string }
+type TextAreaType = BaseType & { type: "textarea", rows?: number, value: string }
 
 type SelectType = BaseType & { type: "select", value: string }
 
@@ -50,13 +51,7 @@ const Property: React.FC<PropertyProps> = ({propertyName, fields, onChange, disa
                 {open && <IconButtonWithTooltip iconSrc={Trash} tooltip={open ? "Delete property" : ""}/>}
             </div>
 
-            {open && (
-                <div className={styles.fields}>
-                    {fields.map((field, index) => (
-                        <PropertyField field={field} onChange={onPropertyChange} key={index}/>
-                    ))}
-                </div>
-            )}
+            {open && <PropertyBody fields={fields} onChange={onPropertyChange} disabled={disabled}/>}
 
             <IconButton onClick={open ? closeDetails : undefined} iconSrc={open ? ActionClose : Plus}/>
         </div>

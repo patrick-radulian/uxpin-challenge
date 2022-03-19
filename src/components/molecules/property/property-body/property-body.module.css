@@ -1,0 +1,11 @@
+.fields {
+    display: grid;
+    font-size: 14px;
+    gap: 10px;
+    padding: 0 14px;
+    width: 513px;
+}
+
+.fields:global(.disabled) {
+    color: var(--silver-darken5);
+}
