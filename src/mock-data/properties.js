@@ -1,109 +1,100 @@
-const mockData = [
-    {
-        name: "Color",
+const mockData = {
+    "Color": {
         fields: [
-            { field: "Property name", type: "input", value: "Color" },
-            { field: "Display name", type: "input", value: "" },
-            { field: "Description", type: "textarea", value: "" },
-            { field: "Property type", type: "select", value: "one of" },
-            { field: "Property control", type: "select", value: "select" },
-            { field: "Options", type: "textarea", value: "default, inherit, primary, secondary" },
-            { field: "Default value", type: "select", value: "primary" }
+            { fieldName: "Property name", type: "input", value: "Color" },
+            { fieldName: "Display name", type: "input", value: "" },
+            { fieldName: "Description", type: "textarea", rows: 3, value: "" },
+            { fieldName: "Property type", type: "select", value: "one of" },
+            { fieldName: "Property control", type: "select", value: "select" },
+            { fieldName: "Options", type: "textarea", hint: "(list options separared by comma)", rows: 2, value: "default, inherit, primary, secondary" },
+            { fieldName: "Default value", type: "select", value: "primary" }
         ],
         disabled: false
     },
-    {
-        name: "Children",
+    "Children": {
         fields: [
-            { field: "Property name", type: "input", value: "Children" },
-            { field: "Display name", type: "input", value: "" },
-            { field: "Description", type: "textarea", value: "" },
-            { field: "Property type", type: "select", value: "node" },
-            { field: "Property control", type: "select", value: "textarea" },
-            { field: "Default value", type: "textarea", value: "" }
+            { fieldName: "Property name", type: "input", value: "Children" },
+            { fieldName: "Display name", type: "input", value: "" },
+            { fieldName: "Description", type: "textarea", rows: 3, value: "" },
+            { fieldName: "Property type", type: "select", value: "node" },
+            { fieldName: "Property control", type: "select", value: "textarea" },
+            { fieldName: "Default value", type: "textarea", value: "" }
         ],
         disabled: false
     },
-    {
-        name: "Disabled",
+    "Disabled": {
         fields: [
-            { field: "Property name", type: "input", value: "Disabled" },
-            { field: "Display name", type: "input", value: "" },
-            { field: "Description", type: "textarea", value: "" },
-            { field: "Property type", type: "select", value: "boolean" },
-            { field: "Default value", type: "switch", value: true }
+            { fieldName: "Property name", type: "input", value: "Disabled" },
+            { fieldName: "Display name", type: "input", value: "" },
+            { fieldName: "Description", type: "textarea", rows: 3, value: "" },
+            { fieldName: "Property type", type: "select", value: "boolean" },
+            { fieldName: "Default value", type: "switch", value: true }
         ],
         disabled: false
     },
-    {
-        name: "Disable focus ripple",
+    "Disable focus ripple": {
         fields: [
-            { field: "Property name", type: "input", value: "Disable focus ripple" },
-            { field: "Display name", type: "input", value: "" },
-            { field: "Description", type: "textarea", value: "" },
-            { field: "Property type", type: "select", value: "boolean" },
-            { field: "Default value", type: "switch", value: true }
-        ],
-        disabled: false
-    },
-    {
-        name: "Disable ripple",
-        fields: [
-            { field: "Property name", type: "input", value: "Color" },
-            { field: "Display name", type: "input", value: "" },
-            { field: "Description", type: "textarea", value: "" },
-            { field: "Property type", type: "select", value: "boolean" },
-            { field: "Default value", type: "switch", value: true }
+            { fieldName: "Property name", type: "input", value: "Disable focus ripple" },
+            { fieldName: "Display name", type: "input", value: "" },
+            { fieldName: "Description", type: "textarea", rows: 3, value: "" },
+            { fieldName: "Property type", type: "select", value: "boolean" },
+            { fieldName: "Default value", type: "switch", value: true }
         ],
         disabled: true
     },
-    {
-        name: "Full width",
+    "Disable ripple": {
         fields: [
-            { field: "Property name", type: "input", value: "Full width" },
-            { field: "Display name", type: "input", value: "" },
-            { field: "Description", type: "textarea", value: "" },
-            { field: "Property type", type: "select", value: "boolean" },
-            { field: "Default value", type: "switch", value: true }
+            { fieldName: "Property name", type: "input", value: "Color" },
+            { fieldName: "Display name", type: "input", value: "" },
+            { fieldName: "Description", type: "textarea", rows: 3, value: "" },
+            { fieldName: "Property type", type: "select", value: "boolean" },
+            { fieldName: "Default value", type: "switch", value: true }
+        ],
+        disabled: true
+    },
+    "Full width": {
+        fields: [
+            { fieldName: "Property name", type: "input", value: "Full width" },
+            { fieldName: "Display name", type: "input", value: "" },
+            { fieldName: "Description", type: "textarea", rows: 3, value: "" },
+            { fieldName: "Property type", type: "select", value: "boolean" },
+            { fieldName: "Default value", type: "switch", value: true }
         ],
         disabled: false
     },
-    {
-        name: "Mini",
+    "Mini": {
         fields: [
-            { field: "Property name", type: "input", value: "Mini" },
-            { field: "Display name", type: "input", value: "" },
-            { field: "Description", type: "textarea", value: "" },
-            { field: "Property type", type: "select", value: "boolean" },
-            { field: "Default value", type: "switch", value: false }
+            { fieldName: "Property name", type: "input", value: "Mini" },
+            { fieldName: "Display name", type: "input", value: "" },
+            { fieldName: "Description", type: "textarea", rows: 3, value: "" },
+            { fieldName: "Property type", type: "select", value: "boolean" },
+            { fieldName: "Default value", type: "switch", value: false }
         ],
         disabled: false
     },
-    {
-        name: "Size",
+    "Size": {
         fields: [
-            { field: "Property name", type: "input", value: "Size" },
-            { field: "Display name", type: "input", value: "" },
-            { field: "Description", type: "textarea", value: "" },
-            { field: "Property type", type: "select", value: "one of" },
-            { field: "Options", type: "textarea", value: "default, small, medium, large" },
-            { field: "Default value", type: "select", value: "large" }
+            { fieldName: "Property name", type: "input", value: "Size" },
+            { fieldName: "Display name", type: "input", value: "" },
+            { fieldName: "Description", type: "textarea", rows: 3, value: "" },
+            { fieldName: "Property type", type: "select", value: "one of" },
+            { fieldName: "Options", type: "textarea", hint: "(list options separared by comma)", rows: 2, value: "default, small, medium, large" },
+            { fieldName: "Default value", type: "select", value: "large" }
         ],
         disabled: false
     },
-    {
-        name: "Variant",
+    "Variant": {
         fields: [
-            { field: "Property name", type: "input", value: "Variant" },
-            { field: "Display name", type: "input", value: "" },
-            { field: "Description", type: "textarea", value: "" },
-            { field: "Property type", type: "select", value: "one of" },
-            { field: "Property control", type: "select", value: "select" },
-            { field: "Options", type: "textarea", value: "default, text, outlained, contained" },
-            { field: "Default value", type: "select", value: "contained" }
+            { fieldName: "Property name", type: "input", value: "Variant" },
+            { fieldName: "Display name", type: "input", value: "" },
+            { fieldName: "Description", type: "textarea", rows: 3, value: "" },
+            { fieldName: "Property type", type: "select", value: "one of" },
+            { fieldName: "Property control", type: "select", value: "select" },
+            { fieldName: "Options", type: "textarea", hint: "(list options separared by comma)", rows: 2, value: "default, text, outlained, contained" },
+            { fieldName: "Default value", type: "select", value: "contained" }
         ],
         disabled: false
     }
-]
+}
 
 export default mockData;
