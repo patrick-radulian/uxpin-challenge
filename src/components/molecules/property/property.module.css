@@ -31,11 +31,14 @@
     display: grid;
     font-size: 14px;
     gap: 12px;
-    width: 523px;
+    padding: 0 14px;
+    width: 513px;
 }
 
 .detail {
-
+    column-gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .property:global(.disabled) .details {

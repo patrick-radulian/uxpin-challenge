@@ -3,13 +3,24 @@ import Typography from "components/atoms/typography/typography"
 import React from "react"
 import styles from "./properties.module.css"
 import Plus from "icons/plus.svg";
-import Property from "components/molecules/property/property";
+import Property, { PropertyProps } from "components/molecules/property/property";
 
-type PropertiesProps = {
 
-}
+const Properties: React.FC<{}> = () => {
+    const [properties, setProperties] = React.useState<Array<PropertyProps>>([]);
 
-const Properties: React.FC<PropertiesProps> = (props: PropertiesProps) => {
+    const fetchMockData = React.useCallback(async () => {
+        const data = await import("../../../mock-data/properties");
+        const json = data.default as Array<PropertyProps>;
+
+        console.log(json);
+        setProperties(json);
+    }, []);
+
+    React.useEffect(() => {
+        fetchMockData();
+    }, [fetchMockData]);
+
     return (
         <div className={styles.properties}>
             <div className={styles.header}>
@@ -19,15 +30,7 @@ const Properties: React.FC<PropertiesProps> = (props: PropertiesProps) => {
             </div>
 
             <div className={styles.list}>
-                <Property name="Color"/>
-                <Property name="Children"/>
-                <Property name="Disabled"/>
-                <Property name="Disable focus ripple" disabled/>
-                <Property name="Disable ripple" disabled/>
-                <Property name="Full width"/>
-                <Property name="Mini"/>
-                <Property name="Size"/>
-                <Property name="Variant"/>
+                {properties.map(property => <Property name={property.name} fields={property.fields} disabled={property.disabled}/>)}
             </div>
         </div>
     )
