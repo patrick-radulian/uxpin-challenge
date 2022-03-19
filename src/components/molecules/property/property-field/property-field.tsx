@@ -1,4 +1,5 @@
 import Input from "components/atoms/input/input"
+import Select from "components/atoms/select/select"
 import Switch from "components/atoms/switch/switch"
 import TextArea from "components/atoms/text-area/text-area"
 import Typography from "components/atoms/typography/typography"
@@ -26,16 +27,20 @@ const PropertyField = ({field, onChange}: Props) => {
 
     return (
         <div className={styles["property-field"]}>
-            <Typography>{field.fieldName}</Typography>
+            <div className={styles["property-field-body"]}>
+                <Typography>{field.fieldName}</Typography>
 
-            {(() => {
-                switch(field.type) {
-                    case "input": return <Input onChange={onInputChange} value={field.value}/>;
-                    case "select": return <Input onChange={onInputChange} value={field.value}/>;
-                    case "switch": return <Switch onChange={onSwitchChange} value={field.value}/>;
-                    case "textarea": return <TextArea onChange={onTextAreaChange} hint={field.hint} rows={field.rows} value={field.value}/>
-                }
-            })()}
+                {(() => {
+                    switch(field.type) {
+                        case "input": return <Input onChange={onInputChange} value={field.value}/>;
+                        case "select": return <Select onChange={onInputChange} value={field.value}/>;
+                        case "switch": return <Switch onChange={onSwitchChange} value={field.value}/>;
+                        case "textarea": return <TextArea onChange={onTextAreaChange} rows={field.rows} value={field.value}/>
+                    }
+                })()}
+            </div>
+
+            {field.hint && <Typography variant="small">{field.hint}</Typography>}
         </div>
     )
 }

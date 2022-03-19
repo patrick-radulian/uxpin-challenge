@@ -10,11 +10,11 @@ import IconButton from "components/atoms/icon-button/icon-button";
 import withTooltip from "components/higher-order/with-tooltip/with-tooltip";
 import PropertyField from "./property-field/property-field";
 
-type BaseType = { fieldName: string }
+type BaseType = { fieldName: string, hint?: string }
 
 type InputType = BaseType & { type: "input", value: string }
 
-type TextAreaType = BaseType & { type: "textarea", rows: number, hint: string, value: string }
+type TextAreaType = BaseType & { type: "textarea", rows: number, value: string }
 
 type SelectType = BaseType & { type: "select", value: string }
 

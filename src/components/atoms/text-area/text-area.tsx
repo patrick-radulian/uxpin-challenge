@@ -7,16 +7,13 @@ type TextAreaProps = {
     value: string
     onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void
     rows?: number
-    hint?: string
     style?: CSS.Properties
 }
 
-const TextArea: React.FC<TextAreaProps> = ({value, onChange, rows = 3, hint, style}: TextAreaProps) => {
+const TextArea: React.FC<TextAreaProps> = ({value, onChange, rows = 3, style}: TextAreaProps) => {
     return (
         <React.Fragment>
             <textarea onChange={onChange} className={styles["text-area"]} value={value} style={style} rows={rows}/>
-
-            {hint && <div className={styles.hint}><Typography variant="small">{hint}</Typography></div>}
         </React.Fragment>
     )
 }
