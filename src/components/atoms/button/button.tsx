@@ -13,9 +13,9 @@ type ButtonProps = {
     style?: CSS.Properties
 }
 
-const Button: React.FC<ButtonProps> = ({children, variant = "default", weight = "heavy", size = "small", ...rest}: ButtonProps) => {
+const Button: React.FC<ButtonProps> = ({children, variant = "default", weight = "heavy", size, ...rest}: ButtonProps) => {
     return (
-        <button className={`${style.button} ${variant} ${weight} ${size} ${rest.stretched ? "stretched" : ""}`} style={rest.style}>
+        <button className={`${style.button} ${variant} ${weight} ${size ? size : ""} ${rest.stretched ? "stretched" : ""}`} style={rest.style}>
             {rest.iconSrc && <img src={rest.iconSrc} alt=""/>}
             {children}
         </button>

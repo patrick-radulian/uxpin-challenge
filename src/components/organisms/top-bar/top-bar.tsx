@@ -23,7 +23,7 @@ const TopBar: React.FC<{}> = () => {
 
             <BarItemGroup justify="right">
                 <Link>Discard Changes</Link>
-                <Button style={{marginRight: "10px"}}>Save Changes</Button>
+                <Button size="small" style={{marginRight: "10px"}}>Save Changes</Button>
             </BarItemGroup>
         </Bar>
     )
