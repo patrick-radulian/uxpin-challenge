@@ -7,6 +7,7 @@ type IconButtonProps = {
     iconSrc: string
 
     style?: CSS.Properties
+    className?: string
     iconHeight?: CSS.Property.Height<string | number>
     iconWidth?: CSS.Property.Width<string | number>
     iconColor?: CSS.Property.Fill
@@ -17,6 +18,7 @@ type IconButtonProps = {
 const IconButton: React.FC<IconButtonProps> = ({
     iconSrc,
     style,
+    className,
     iconHeight = 12,
     iconWidth = 12,
     iconColor = "var(--gray-lighten10)",
@@ -38,7 +40,7 @@ const IconButton: React.FC<IconButtonProps> = ({
     }
 
     return (
-        <button onClick={onClick} className={styles['icon-button']} style={btnStyle}>
+        <button onClick={onClick} className={`${styles['icon-button']} ${className ? className : ""}`} style={btnStyle}>
             <ReactSVG src={iconSrc} beforeInjection={svg => setSvgStyle(svg)}/>
         </button>
     )
