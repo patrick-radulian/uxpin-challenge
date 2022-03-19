@@ -6,11 +6,12 @@ type TypographyProps = {
     children?: string
     variant?: "base" | "small" | "h2" | "h4" | "h6",
     style?: CSS.Properties
+    className?: string
 }
 
-const Typography: React.FC<TypographyProps> = ({children, variant = "base", style}: TypographyProps) => {
+const Typography: React.FC<TypographyProps> = ({children, variant = "base", style, className}: TypographyProps) => {
     return (
-        <div className={`${styles.typography} ${variant}`} style={style}>{children}</div>
+        <div className={`${className} ${styles.typography} ${variant}`} style={style}>{children}</div>
     )
 }
 
