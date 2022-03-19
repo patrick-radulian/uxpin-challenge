@@ -12,6 +12,7 @@ type LinkProps = {
     iconWidth?: number
     iconHeight?: number
     style?: CSS.Properties
+    onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void
 }
 
 const Link: React.FC<LinkProps> = ({children, linkTo = "#", underline = true, iconSrc, iconPosition = "start", iconWidth = 12, iconHeight = 12, style}: LinkProps) => {
