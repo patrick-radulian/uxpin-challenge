@@ -55,7 +55,7 @@ const PropertyField = ({field, onChange}: Props) => {
                 }
 
                 return <Link href={hintSection.href} key={index}>
-                    <Typography variant="small">{hintSection.linkText}</Typography>
+                    <Typography variant="small" style={{color: "inherit"}}>{hintSection.linkText}</Typography>
                 </Link>
             })}
         </div>
