@@ -14,8 +14,8 @@ export type HintTextType = { text: string }
 export type HintLinkType = { linkText: string, href: string }
 
 type BaseType = { width?: number }
-type TextInput = BaseType & { type: "text", value: string }
-type TextAreaInput = BaseType & { type: "textarea", value: string, rows?: number }
+type TextInput = BaseType & { type: "text", value: string, placeholder?: string }
+type TextAreaInput = BaseType & { type: "textarea", value: string, rows?: number, placeholder?: string }
 type SelectInput = BaseType & { type: "select", value: string }
 type SwitchInput = BaseType & { type: "switch", value: boolean }
 

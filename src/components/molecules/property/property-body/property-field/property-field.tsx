@@ -39,10 +39,10 @@ const PropertyField = ({field, onChange}: Props) => {
                     <React.Fragment key={index}>
                         {(() => {
                             switch(input.type) {
-                                case "text": return <Input onChange={onInputChange} value={input.value} style={{width: `${input.width}px`}}/>;
+                                case "text": return <Input onChange={onInputChange} value={input.value} placeholder={input.placeholder} style={{width: `${input.width}px`}}/>;
                                 case "select": return <Select onChange={onInputChange} value={input.value} style={{width: `${input.width}px`}}/>;
                                 case "switch": return <Switch onChange={onSwitchChange} checked={input.value} style={{width: `${input.width}px`}}/>;
-                                case "textarea": return <TextArea onChange={onTextAreaChange} rows={input.rows} value={input.value} style={{width: `${input.width}px`}}/>
+                                case "textarea": return <TextArea onChange={onTextAreaChange} rows={input.rows} value={input.value} placeholder={input.placeholder} style={{width: `${input.width}px`}}/>
                             }
                         })()}
                     </React.Fragment>

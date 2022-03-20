@@ -55,7 +55,7 @@ const mockData = [
             },
             {
                 fieldName: "Property control",
-                inputs: [{type: "select", value: "textarea"}, {type: "text", value: "", width: 38}]
+                inputs: [{type: "select", value: "textarea"}, {type: "text", value: "", placeholder: "rows", width: 38}]
             },
             {
                 fieldName: "Default value",
