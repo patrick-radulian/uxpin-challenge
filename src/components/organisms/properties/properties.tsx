@@ -33,6 +33,8 @@ const Properties: React.FC<PropertiesProps> = ({sort}: PropertiesProps) => {
 
     const showNewPropertyForm = () => setNewPropertyVisibility(true);
 
+    const hideNewPropertyForm = () => setNewPropertyVisibility(false);
+
     const onChange = (propertyName: string, fieldName: string, value: string | boolean) => {
         setProperties(() => {
             return [
@@ -63,7 +65,7 @@ const Properties: React.FC<PropertiesProps> = ({sort}: PropertiesProps) => {
     }
 
     const sortProperties = (a: PropertyType, b: PropertyType) => {
-        return (a.name < b.name ? -1 : 1) * (sort === "desc" ? -1 : 1);
+        return sort ? (a.name < b.name ? -1 : 1) * (sort === "desc" ? -1 : 1) : 1;
     }
 
     return (
@@ -76,7 +78,7 @@ const Properties: React.FC<PropertiesProps> = ({sort}: PropertiesProps) => {
                 </Link>
             </div>
 
-            {newPropertyVisibility && <NewPropertyForm onAdd={onAddProperty}/>}
+            {newPropertyVisibility && <NewPropertyForm onClose={hideNewPropertyForm} onAdd={onAddProperty}/>}
 
             <div className={styles.list}>
                 {properties.sort(sortProperties).map((property, index) => (
