@@ -7,5 +7,5 @@
 }
 
 .fields:global(.disabled) {
-    color: var(--silver-darken5);
+    opacity: 0.3;
 }
