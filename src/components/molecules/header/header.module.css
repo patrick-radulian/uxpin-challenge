@@ -1,5 +1,11 @@
 .header {
     align-items: center;
     display: flex;
+    gap: 12px;
     margin: 45px 43px 0;
+}
+
+.actions {
+    display: flex;
+    gap: 5px;
 }
