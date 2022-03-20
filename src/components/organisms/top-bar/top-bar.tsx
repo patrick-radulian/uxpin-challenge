@@ -26,7 +26,7 @@ const TopBar: React.FC<{}> = () => {
             </BarItemGroup>
 
             <BarItemGroup justify="right">
-                <Link>Discard Changes</Link>
+                <Link>Discard changes</Link>
 
                 {clicked ? (
                     <Button onClick={() => onClick(false)} size="small" variant="neutral" style={{width: "100px", marginRight: "10px", letterSpacing: "-0.05ch"}}>No changes to save</Button>
