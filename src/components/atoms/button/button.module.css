@@ -4,6 +4,7 @@
     border: none;
     border-radius: 2px;
     box-sizing: border-box;
+    cursor: pointer;
     display: inline-flex;
     font-size: 14px;
     height: 32px;
