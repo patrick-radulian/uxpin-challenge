@@ -7,24 +7,31 @@ import Button from "components/atoms/button/button"
 import { PropertyType } from "components/organisms/properties/properties"
 
 type NewPropertyProps = {
+    onClose: () => void
     onAdd: (property: PropertyType) => void
 }
 
 const newProperty: PropertyType = {
     name: "",
     fields: [
-        { fieldName: "Property name", type: "input", value: "", hint: "(name of the property given in code)" },
+        { fieldName: "Property name", type: "input", value: "", hint: [{text: "(name of the proerty given in code)"}] },
         { fieldName: "Display name", type: "input", value: "" },
         { fieldName: "Description", type: "textarea", value: "" },
-        { fieldName: "Property type", type: "select", value: "one of" },
-        { fieldName: "Property control", type: "select", value: "", hint: "(type of control displayed in editor's properties panel. Learn more about control types)" },
-        { fieldName: "Options", type: "textarea", rows: 2, value: "", hint: "(list options sapafared by comma)" },
+        { fieldName: "Propety type", type: "select", value: "one of" },
+        { fieldName: "Property control", type: "select", value: "", hint: [
+            {text: "(type of control displayed in editor's properties panel. "},
+            {linkText: "Learn more ", linkTo: ""},
+            {text: "about control types)"}]
+        },
+        { fieldName: "Options", type: "textarea", rows: 2, value: "", hint: [{text: "(list options sepafared by comma)"}] },
         { fieldName: "Default value", type: "select", value: "" }
     ],
     disabled: false
 }
 
-const NewPropertyForm: React.FC<NewPropertyProps> = ({onAdd}: NewPropertyProps) => {
+
+
+const NewPropertyForm: React.FC<NewPropertyProps> = ({onClose, onAdd}: NewPropertyProps) => {
     const [property, setProperty] = React.useState<PropertyType>(newProperty);
 
     const onChange = (fieldName: string, value: string | boolean) => {
@@ -44,6 +51,8 @@ const NewPropertyForm: React.FC<NewPropertyProps> = ({onAdd}: NewPropertyProps) 
         })
     }
 
+    const onCancel = (e: React.MouseEvent<HTMLAnchorElement>) => onClose();
+
     const onClickAdd = (e: React.MouseEvent<HTMLButtonElement>) => onAdd(property);
 
     return (
@@ -51,7 +60,7 @@ const NewPropertyForm: React.FC<NewPropertyProps> = ({onAdd}: NewPropertyProps) 
             <PropertyBody fields={property.fields} onChange={onChange}/>
 
             <div className={styles.actions}>
-                <Link>Cancel</Link>
+                <Link onClick={onCancel}>Cancel</Link>
                 <Button onClick={onClickAdd}>Add</Button>
             </div>
 
