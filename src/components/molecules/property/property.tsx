@@ -10,7 +10,11 @@ import IconButton from "components/atoms/icon-button/icon-button";
 import withTooltip from "components/higher-order/with-tooltip/with-tooltip";
 import PropertyBody from "./property-body/property-body";
 
-type BaseType = { fieldName: string, hint?: string }
+export type HintTextType = { text: string }
+
+export type HintLinkType = { linkText: string, linkTo: string }
+
+type BaseType = { fieldName: string, hint?: Array<HintTextType | HintLinkType> }
 
 type InputType = BaseType & { type: "input", value: string }
 

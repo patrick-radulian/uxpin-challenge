@@ -1,15 +1,20 @@
 import Input from "components/atoms/input/input"
+import Link from "components/atoms/link/link"
 import Select from "components/atoms/select/select"
 import Switch from "components/atoms/switch/switch"
 import TextArea from "components/atoms/text-area/text-area"
 import Typography from "components/atoms/typography/typography"
 import React from "react"
-import { Field } from "../../property"
+import { Field, HintLinkType, HintTextType } from "../../property"
 import styles from "./property-field.module.css"
 
 type Props = {
     field: Field
     onChange: (fieldName: string, value: string | boolean) => void
+}
+
+const isTextHint = (hint: HintTextType | HintLinkType): hint is HintTextType => {
+    return "text" in hint;
 }
 
 const PropertyField = ({field, onChange}: Props) => {
@@ -40,7 +45,15 @@ const PropertyField = ({field, onChange}: Props) => {
                 })()}
             </div>
 
-            {field.hint && <Typography variant="small">{field.hint}</Typography>}
+            {field.hint && field.hint.map((hintSection, index) => {
+                if (isTextHint(hintSection)) {
+                    return <Typography variant="small" key={index}>{hintSection.text}</Typography>
+                }
+
+                return <Link linkTo={hintSection.linkTo} key={index}>
+                    <Typography variant="small">{hintSection.linkText}</Typography>
+                </Link>
+            })}
         </div>
     )
 }
