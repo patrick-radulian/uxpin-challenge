@@ -5,7 +5,7 @@ import SVG from "react-inlinesvg";
 
 type LinkProps = {
     children: React.ReactElement | string | Array<React.ReactElement | string>
-    linkTo?: string
+    href?: string
     underline?: boolean
     iconSrc?: string
     iconPosition?: "start" | "end"
@@ -17,7 +17,7 @@ type LinkProps = {
 
 const Link: React.FC<LinkProps> = ({
     children,
-    linkTo = "#",
+    href,
     underline = true,
     iconSrc,
     iconPosition = "start",
@@ -29,7 +29,7 @@ const Link: React.FC<LinkProps> = ({
     const icon = iconSrc ? <SVG src={iconSrc} height={iconHeight} width={iconWidth} fill="currentColor"/> : null;
 
     return (
-        <a className={styles.link} href={linkTo} onClick={onClick} style={style}>
+        <a className={styles.link} {...(href && { href })} onClick={onClick} style={style}>
             {icon && iconPosition === "start" && icon}
 
             <div className={styles["link-text"]}>

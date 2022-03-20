@@ -20,7 +20,7 @@ const newProperty: PropertyType = {
         { fieldName: "Propety type", type: "select", value: "one of" },
         { fieldName: "Property control", type: "select", value: "", hint: [
             {text: "(type of control displayed in editor's properties panel. "},
-            {linkText: "Learn more ", linkTo: ""},
+            {linkText: "Learn more ", href: ""},
             {text: "about control types)"}]
         },
         { fieldName: "Options", type: "textarea", rows: 2, value: "", hint: [{text: "(list options sepafared by comma)"}] },
@@ -61,7 +61,7 @@ const NewPropertyForm: React.FC<NewPropertyProps> = ({onClose, onAdd}: NewProper
             <PropertyBody fields={property.fields} onChange={onChange}/>
 
             <div className={styles.actions}>
-                <Link onClick={onCancel}>Cancel</Link>
+                <Link onClick={onCancel} href="#">Cancel</Link>
                 <Button onClick={onClickAdd}>Add</Button>
             </div>
 

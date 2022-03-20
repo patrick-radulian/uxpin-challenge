@@ -81,7 +81,7 @@ const Properties: React.FC<PropertiesProps> = ({sort}: PropertiesProps) => {
             <div className={styles.header}>
                 <Typography variant="h4">Properties</Typography>
 
-                <Link iconSrc={Plus} iconWidth={7} iconHeight={8} onClick={showNewPropertyForm} style={{color: "var(--blue-base)", marginBottom: "2px"}}>
+                <Link iconSrc={Plus} iconWidth={7} iconHeight={8} href="#" onClick={showNewPropertyForm} style={{color: "var(--blue-base)", marginBottom: "2px"}}>
                     Add new property
                 </Link>
             </div>

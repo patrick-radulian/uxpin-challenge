@@ -12,7 +12,7 @@ import PropertyBody from "./property-body/property-body";
 
 export type HintTextType = { text: string }
 
-export type HintLinkType = { linkText: string, linkTo: string }
+export type HintLinkType = { linkText: string, href: string }
 
 type BaseType = { fieldName: string, hint?: Array<HintTextType | HintLinkType> }
 

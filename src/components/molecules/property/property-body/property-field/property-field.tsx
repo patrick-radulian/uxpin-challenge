@@ -50,7 +50,7 @@ const PropertyField = ({field, onChange}: Props) => {
                     return <Typography variant="small" key={index}>{hintSection.text}</Typography>
                 }
 
-                return <Link linkTo={hintSection.linkTo} key={index}>
+                return <Link href={hintSection.href} key={index}>
                     <Typography variant="small">{hintSection.linkText}</Typography>
                 </Link>
             })}
