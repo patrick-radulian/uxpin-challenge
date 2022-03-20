@@ -59,7 +59,7 @@ const mockData = [
             },
             {
                 fieldName: "Default value",
-                inputs: [{type: "textarea", value: ""}]
+                inputs: [{type: "textarea", value: "", rows: 2}]
             }
         ],
         disabled: false
