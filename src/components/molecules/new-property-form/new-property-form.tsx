@@ -49,7 +49,7 @@ const newProperty: PropertyType = {
 const NewPropertyForm: React.FC<NewPropertyProps> = ({onClose, onAdd}: NewPropertyProps) => {
     const [property, setProperty] = React.useState<PropertyType>(newProperty);
 
-    const onChange = (fieldName: string, value: string | boolean) => {
+    const onChange = (fieldName: string, inputIndex: number, value: string | boolean) => {
         setProperty(() => {
             return {
                 ...property,
@@ -57,7 +57,19 @@ const NewPropertyForm: React.FC<NewPropertyProps> = ({onClose, onAdd}: NewProper
                 fields: [
                     ...property.fields.map(field => {
                         if (field.fieldName === fieldName) {
-                            return { ...field, value: value as any }
+                            return {
+                                ...field,
+                                inputs: field.inputs.map((input, index) => {
+                                    if (index === inputIndex) {
+                                        return {
+                                            ...input,
+                                            value: value as any
+                                        }
+                                    }
+
+                                    return input;
+                                })
+                            }
                         }
 
                         return field;

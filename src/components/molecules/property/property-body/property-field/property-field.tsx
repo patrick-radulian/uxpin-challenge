@@ -5,12 +5,12 @@ import Switch from "components/atoms/switch/switch"
 import TextArea from "components/atoms/text-area/text-area"
 import Typography from "components/atoms/typography/typography"
 import React from "react"
-import { FieldType, HintLinkType, HintTextType } from "../../property"
+import { FieldInput, FieldType, HintLinkType, HintTextType, SelectInput, SwitchInput, TextAreaInput, TextInput } from "../../property"
 import styles from "./property-field.module.css"
 
 type Props = {
     field: FieldType
-    onChange: (fieldName: string, value: string | boolean) => void
+    onChange: (fieldName: string, inputIndex: number, value: string | boolean) => void
 }
 
 const isTextHint = (hint: HintTextType | HintLinkType): hint is HintTextType => {
@@ -18,17 +18,52 @@ const isTextHint = (hint: HintTextType | HintLinkType): hint is HintTextType => 
 }
 
 const PropertyField = ({field, onChange}: Props) => {
-    const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        onChange(field.fieldName, e.target.value);
+    const onInputChange = (e: React.ChangeEvent<HTMLInputElement>, inputIndex: number) => {
+        onChange(field.fieldName, inputIndex, e.target.value);
     }
 
-    const onSwitchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        onChange(field.fieldName, e.target.checked);
+    const onSwitchChange = (e: React.ChangeEvent<HTMLInputElement>, inputIndex: number) => {
+        onChange(field.fieldName, inputIndex, e.target.checked);
     }
 
-    const onTextAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-        onChange(field.fieldName, e.target.value);
+    const onTextAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement>, inputIndex: number) => {
+        onChange(field.fieldName, inputIndex, e.target.value);
     }
+
+    const textInput = (input: TextInput, inputIndex: number) => (
+        <Input
+            onChange={e => onInputChange(e, inputIndex)}
+            value={input.value}
+            placeholder={input.placeholder}
+            style={{width: `${input.width}px`}}
+        />
+    )
+
+    const selectInput = (input: SelectInput, inputIndex: number) => (
+        <Select
+            onChange={e => onInputChange(e, inputIndex)}
+            value={input.value}
+            style={{width: `${input.width}px`}}
+        />
+    )
+
+    const switchInput = (input: SwitchInput, inputIndex: number) => (
+        <Switch
+            onChange={e => onSwitchChange(e, inputIndex)}
+            checked={input.value}
+            style={{width: `${input.width}px`}}
+        />
+    )
+
+    const textAreaInput = (input: TextAreaInput, inputIndex: number) => (
+        <TextArea
+            onChange={e => onTextAreaChange(e, inputIndex)}
+            rows={input.rows}
+            value={input.value}
+            placeholder={input.placeholder}
+            style={{width: `${input.width}px`}}
+        />
+    )
 
     return (
         <div className={styles["property-field"]}>
@@ -39,10 +74,10 @@ const PropertyField = ({field, onChange}: Props) => {
                     <React.Fragment key={index}>
                         {(() => {
                             switch(input.type) {
-                                case "text": return <Input onChange={onInputChange} value={input.value} placeholder={input.placeholder} style={{width: `${input.width}px`}}/>;
-                                case "select": return <Select onChange={onInputChange} value={input.value} style={{width: `${input.width}px`}}/>;
-                                case "switch": return <Switch onChange={onSwitchChange} checked={input.value} style={{width: `${input.width}px`}}/>;
-                                case "textarea": return <TextArea onChange={onTextAreaChange} rows={input.rows} value={input.value} placeholder={input.placeholder} style={{width: `${input.width}px`}}/>
+                                case "text": return textInput(input, index);
+                                case "select": return selectInput(input, index);
+                                case "switch": return switchInput(input, index);
+                                case "textarea": return textAreaInput(input, index);
                             }
                         })()}
                     </React.Fragment>

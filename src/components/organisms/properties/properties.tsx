@@ -35,7 +35,7 @@ const Properties: React.FC<PropertiesProps> = ({sort}: PropertiesProps) => {
 
     const hideNewPropertyForm = () => setNewPropertyVisibility(false);
 
-    const onChange = (propertyName: string, fieldName: string, value: string | boolean) => {
+    const onChange = (propertyName: string, fieldName: string, inputIndex: number, value: string | boolean) => {
         setProperties(() => {
             return [
                 ...properties.map(property => {
@@ -45,7 +45,19 @@ const Properties: React.FC<PropertiesProps> = ({sort}: PropertiesProps) => {
                             fields: [
                                 ...property.fields.map(field => {
                                     if (field.fieldName === fieldName) {
-                                        return { ...field, value: value as any }
+                                        return {
+                                            ...field,
+                                            inputs: field.inputs.map((input, index) => {
+                                                if (index === inputIndex) {
+                                                    return {
+                                                        ...input,
+                                                        value: value as any
+                                                    }
+                                                }
+
+                                                return input;
+                                            })
+                                        }
                                     }
 
                                     return field;

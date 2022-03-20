@@ -14,19 +14,19 @@ export type HintTextType = { text: string }
 export type HintLinkType = { linkText: string, href: string }
 
 type BaseType = { width?: number }
-type TextInput = BaseType & { type: "text", value: string, placeholder?: string }
-type TextAreaInput = BaseType & { type: "textarea", value: string, rows?: number, placeholder?: string }
-type SelectInput = BaseType & { type: "select", value: string }
-type SwitchInput = BaseType & { type: "switch", value: boolean }
+export type TextInput = BaseType & { type: "text", value: string, placeholder?: string }
+export type TextAreaInput = BaseType & { type: "textarea", value: string, rows?: number, placeholder?: string }
+export type SelectInput = BaseType & { type: "select", value: string }
+export type SwitchInput = BaseType & { type: "switch", value: boolean }
 
-type FieldInput = TextInput | TextAreaInput | SelectInput | SwitchInput
+export type FieldInput = TextInput | TextAreaInput | SelectInput | SwitchInput
 
 export type FieldType = { fieldName: string, inputs: Array<FieldInput>, hint?: Array<HintTextType | HintLinkType> }
 
 export type PropertyProps = {
     propertyName: string
     fields: Array<FieldType>
-    onChange: (propertyName: string, fieldName: string, value: string | boolean) => void
+    onChange: (propertyName: string, fieldName: string, inputIndex: number, value: string | boolean) => void
     disabled: boolean
 }
 
@@ -39,8 +39,8 @@ const Property: React.FC<PropertyProps> = ({propertyName, fields, onChange, disa
 
     const closeDetails = () => setOpened(false);
 
-    const onPropertyChange = (fieldName: string, value: string | boolean) => {
-        onChange(propertyName, fieldName, value);
+    const onPropertyChange = (fieldName: string, inputIndex: number, value: string | boolean) => {
+        onChange(propertyName, fieldName, inputIndex, value);
     }
 
     return (

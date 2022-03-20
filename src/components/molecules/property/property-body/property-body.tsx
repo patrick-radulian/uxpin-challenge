@@ -5,7 +5,7 @@ import PropertyField from "./property-field/property-field";
 
 type PropertyBodyProps = {
     fields: Array<FieldType>
-    onChange: (fieldName: string, value: string | boolean) => void
+    onChange: (fieldName: string, inputIndex: number, value: string | boolean) => void
     disabled?: boolean
 }
 
