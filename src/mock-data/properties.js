@@ -7,7 +7,7 @@ const mockData = [
             { fieldName: "Description", type: "textarea", rows: 3, value: "" },
             { fieldName: "Property type", type: "select", value: "one of" },
             { fieldName: "Property control", type: "select", value: "select" },
-            { fieldName: "Options", type: "textarea", hint: "(list options separared by comma)", rows: 2, value: "default, inherit, primary, secondary" },
+            { fieldName: "Options", type: "textarea", hint: [{text: "(list options separared by comma)"}], rows: 2, value: "default, inherit, primary, secondary" },
             { fieldName: "Default value", type: "select", value: "primary" }
         ],
         disabled: false
@@ -86,7 +86,7 @@ const mockData = [
             { fieldName: "Display name", type: "input", value: "" },
             { fieldName: "Description", type: "textarea", rows: 3, value: "" },
             { fieldName: "Property type", type: "select", value: "one of" },
-            { fieldName: "Options", type: "textarea", hint: "(list options separared by comma)", rows: 2, value: "default, small, medium, large" },
+            { fieldName: "Options", type: "textarea", hint: [{text: "(list options separared by comma)"}], rows: 2, value: "default, small, medium, large" },
             { fieldName: "Default value", type: "select", value: "large" }
         ],
         disabled: false
@@ -99,7 +99,7 @@ const mockData = [
             { fieldName: "Description", type: "textarea", rows: 3, value: "" },
             { fieldName: "Property type", type: "select", value: "one of" },
             { fieldName: "Property control", type: "select", value: "select" },
-            { fieldName: "Options", type: "textarea", hint: "(list options separared by comma)", rows: 2, value: "default, text, outlained, contained" },
+            { fieldName: "Options", type: "textarea", hint: [{text: "(list options separared by comma)"}], rows: 2, value: "default, text, outlained, contained" },
             { fieldName: "Default value", type: "select", value: "contained" }
         ],
         disabled: false
