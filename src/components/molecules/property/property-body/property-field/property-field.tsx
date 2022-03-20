@@ -23,7 +23,7 @@ const PropertyField = ({field, onChange}: Props) => {
     }
 
     const onSwitchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        onChange(field.fieldName, e.target.value);
+        onChange(field.fieldName, e.target.checked);
     }
 
     const onTextAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -39,7 +39,7 @@ const PropertyField = ({field, onChange}: Props) => {
                     switch(field.type) {
                         case "input": return <Input onChange={onInputChange} value={field.value}/>;
                         case "select": return <Select onChange={onInputChange} value={field.value}/>;
-                        case "switch": return <Switch onChange={onSwitchChange} value={field.value}/>;
+                        case "switch": return <Switch onChange={onSwitchChange} checked={field.value}/>;
                         case "textarea": return <TextArea onChange={onTextAreaChange} rows={field.rows} value={field.value}/>
                     }
                 })()}
