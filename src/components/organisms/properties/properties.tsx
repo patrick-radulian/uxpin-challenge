@@ -63,8 +63,9 @@ const Properties: React.FC<PropertiesProps> = ({sort}: PropertiesProps) => {
     const onAddProperty = (property: PropertyType) => {
         setProperties(() => {
             return [
-                ...properties,
-                property
+                ...properties.slice(0, 7),
+                property,
+                ...properties.slice(7)
             ]
         });
 
