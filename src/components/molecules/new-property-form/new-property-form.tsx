@@ -38,6 +38,7 @@ const NewPropertyForm: React.FC<NewPropertyProps> = ({onClose, onAdd}: NewProper
         setProperty(() => {
             return {
                 ...property,
+                name: fieldName === "Property name" ? (value as string) : property.name,
                 fields: [
                     ...property.fields.map(field => {
                         if (field.fieldName === fieldName) {
