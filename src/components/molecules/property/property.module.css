@@ -30,3 +30,7 @@
 .action {
     margin: 12px 0;
 }
+
+.property:not(:global(.open)):hover .action {
+    background: var(--shade-light);
+}
