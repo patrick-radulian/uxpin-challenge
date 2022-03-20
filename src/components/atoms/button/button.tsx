@@ -4,7 +4,7 @@ import style from "./button.module.css";
 
 type ButtonProps = {
     children?: string
-    variant?: "default" | "neutral" | "success" | "destructive"
+    variant?: "default" | "neutral"
     weight?: "light" | "heavy"
     size?: "small" | "large"
     stretched?: boolean

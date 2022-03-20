@@ -5,7 +5,7 @@
     border-radius: 2px;
     box-sizing: border-box;
     cursor: pointer;
-    display: inline-flex;
+    display: inline;
     font-size: 14px;
     height: 32px;
     line-height: 18px;
@@ -18,9 +18,15 @@
     font-weight: 700;
 }
 
+.button:global(.neutral):global(.heavy) {
+    background: var(--silver-darken1);
+    color: var(--gray-lighten10);
+    font-weight: 700;
+}
+
 .button:global(.small) {
     font-size: 12px;
     height: 24px;
     line-height: 16px;
-    padding: 0 10px;
+    padding: 5px 10px 3px;
 }

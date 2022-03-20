@@ -12,6 +12,10 @@ import withTooltip from "components/higher-order/with-tooltip/with-tooltip";
 const IconButtonWithTooltip = withTooltip(IconButton);
 
 const TopBar: React.FC<{}> = () => {
+    const [clicked, setClicked] = React.useState<boolean>(false);
+
+    const onClick = (value: boolean) => setClicked(value);
+
     return (
         <Bar style={{padding: "8px", alignItems: "center"}}>
             <BarItemGroup justify="left">
@@ -23,7 +27,12 @@ const TopBar: React.FC<{}> = () => {
 
             <BarItemGroup justify="right">
                 <Link>Discard Changes</Link>
-                <Button size="small" style={{marginRight: "10px"}}>Save changes</Button>
+
+                {clicked ? (
+                    <Button onClick={() => onClick(false)} size="small" variant="neutral" style={{width: "100px", marginRight: "10px", letterSpacing: "-0.05ch"}}>No changes to save</Button>
+                ) : (
+                    <Button onClick={() => onClick(true)} size="small" style={{marginRight: "10px"}}>Save changes</Button>
+                )}
             </BarItemGroup>
         </Bar>
     )
