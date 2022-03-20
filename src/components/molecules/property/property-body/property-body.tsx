@@ -1,10 +1,10 @@
 import React from "react"
 import styles from "./property-body.module.css";
-import { Field } from "../property"
+import { FieldType } from "../property"
 import PropertyField from "./property-field/property-field";
 
 type PropertyBodyProps = {
-    fields: Array<Field>
+    fields: Array<FieldType>
     onChange: (fieldName: string, value: string | boolean) => void
     disabled?: boolean
 }

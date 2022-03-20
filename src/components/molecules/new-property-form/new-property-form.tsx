@@ -14,17 +14,32 @@ type NewPropertyProps = {
 const newProperty: PropertyType = {
     name: "",
     fields: [
-        { fieldName: "Property name", type: "input", value: "", hint: [{text: "(name of the proerty given in code)"}] },
-        { fieldName: "Display name", type: "input", value: "" },
-        { fieldName: "Description", type: "textarea", value: "" },
-        { fieldName: "Propety type", type: "select", value: "one of" },
-        { fieldName: "Property control", type: "select", value: "", hint: [
-            {text: "(type of control displayed in editor's properties panel. "},
-            {linkText: "Learn more ", href: ""},
-            {text: "about control types)"}]
+        {
+            fieldName: "Property name",
+            inputs: [{type: "text", value: ""}],
+            hint: [{text: "(name of the proerty given in code)"}] },
+        {
+            fieldName: "Display name",
+            inputs: [{type: "text", value: ""}] },
+        {
+            fieldName: "Description",
+            inputs: [{type: "textarea", value: ""}] },
+        {
+            fieldName: "Propety type",
+            inputs: [{type: "select", value: "one of"}] },
+        {
+            fieldName: "Property control",
+            inputs: [{type: "select", value: ""}],
+            hint: [{text: "(type of control displayed in editor's properties panel. "}, {linkText: "Learn more ", href: ""}, {text: "about control types)"}]
         },
-        { fieldName: "Options", type: "textarea", rows: 2, value: "", hint: [{text: "(list options sepafared by comma)"}] },
-        { fieldName: "Default value", type: "select", value: "" }
+        {
+            fieldName: "Options",
+            inputs: [{type: "textarea", rows: 2, value: ""}],
+            hint: [{text: "(list options sepafared by comma)"}] },
+        {
+            fieldName: "Default value",
+            inputs: [{type: "select", value: ""}]
+        }
     ],
     disabled: false
 }

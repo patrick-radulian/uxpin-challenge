@@ -5,11 +5,11 @@ import Switch from "components/atoms/switch/switch"
 import TextArea from "components/atoms/text-area/text-area"
 import Typography from "components/atoms/typography/typography"
 import React from "react"
-import { Field, HintLinkType, HintTextType } from "../../property"
+import { FieldType, HintLinkType, HintTextType } from "../../property"
 import styles from "./property-field.module.css"
 
 type Props = {
-    field: Field
+    field: FieldType
     onChange: (fieldName: string, value: string | boolean) => void
 }
 
@@ -35,14 +35,18 @@ const PropertyField = ({field, onChange}: Props) => {
             <div className={styles["property-field-body"]}>
                 <Typography>{field.fieldName}</Typography>
 
-                {(() => {
-                    switch(field.type) {
-                        case "input": return <Input onChange={onInputChange} value={field.value}/>;
-                        case "select": return <Select onChange={onInputChange} value={field.value}/>;
-                        case "switch": return <Switch onChange={onSwitchChange} checked={field.value}/>;
-                        case "textarea": return <TextArea onChange={onTextAreaChange} rows={field.rows} value={field.value}/>
-                    }
-                })()}
+                {field.inputs.map((input, index) =>
+                    <React.Fragment key={index}>
+                        {(() => {
+                            switch(input.type) {
+                                case "text": return <Input onChange={onInputChange} value={input.value} style={{width: `${input.width}px`}}/>;
+                                case "select": return <Select onChange={onInputChange} value={input.value} style={{width: `${input.width}px`}}/>;
+                                case "switch": return <Switch onChange={onSwitchChange} checked={input.value} style={{width: `${input.width}px`}}/>;
+                                case "textarea": return <TextArea onChange={onTextAreaChange} rows={input.rows} value={input.value} style={{width: `${input.width}px`}}/>
+                            }
+                        })()}
+                    </React.Fragment>
+                )}
             </div>
 
             {field.hint && field.hint.map((hintSection, index) => {

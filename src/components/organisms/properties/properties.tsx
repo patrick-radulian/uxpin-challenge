@@ -3,12 +3,12 @@ import Typography from "components/atoms/typography/typography"
 import React from "react"
 import styles from "./properties.module.css"
 import Plus from "icons/plus.svg";
-import Property, { Field } from "components/molecules/property/property";
+import Property, { FieldType } from "components/molecules/property/property";
 import NewPropertyForm from "components/molecules/new-property-form/new-property-form";
 
 export type PropertyType = {
     name: string,
-    fields: Array<Field>
+    fields: Array<FieldType>
     disabled: boolean
 }
 

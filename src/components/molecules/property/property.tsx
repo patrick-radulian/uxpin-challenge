@@ -11,24 +11,21 @@ import withTooltip from "components/higher-order/with-tooltip/with-tooltip";
 import PropertyBody from "./property-body/property-body";
 
 export type HintTextType = { text: string }
-
 export type HintLinkType = { linkText: string, href: string }
 
-type BaseType = { fieldName: string, hint?: Array<HintTextType | HintLinkType> }
+type BaseType = { width?: number }
+type TextInput = BaseType & { type: "text", value: string }
+type TextAreaInput = BaseType & { type: "textarea", value: string, rows?: number }
+type SelectInput = BaseType & { type: "select", value: string }
+type SwitchInput = BaseType & { type: "switch", value: boolean }
 
-type InputType = BaseType & { type: "input", value: string }
+type FieldInput = TextInput | TextAreaInput | SelectInput | SwitchInput
 
-type TextAreaType = BaseType & { type: "textarea", rows?: number, value: string }
-
-type SelectType = BaseType & { type: "select", value: string }
-
-type SwitchType = BaseType & { type: "switch", value: boolean }
-
-export type Field = InputType | TextAreaType | SelectType | SwitchType
+export type FieldType = { fieldName: string, inputs: Array<FieldInput>, hint?: Array<HintTextType | HintLinkType> }
 
 export type PropertyProps = {
     propertyName: string
-    fields: Array<Field>
+    fields: Array<FieldType>
     onChange: (propertyName: string, fieldName: string, value: string | boolean) => void
     disabled: boolean
 }
