@@ -6,11 +6,10 @@ import Plus from "icons/plus.svg";
 import Property, { Field } from "components/molecules/property/property";
 import NewPropertyForm from "components/molecules/new-property-form/new-property-form";
 
-export type PropertiesType = {
-    [key: string]: {
-        fields: Array<Field>
-        disabled: boolean
-    }
+export type PropertyType = {
+    name: string,
+    fields: Array<Field>
+    disabled: boolean
 }
 
 type PropertiesProps = {
@@ -19,11 +18,11 @@ type PropertiesProps = {
 
 const Properties: React.FC<PropertiesProps> = ({sort}: PropertiesProps) => {
     const [newPropertyVisibility, setNewPropertyVisibility] = React.useState<boolean>(false);
-    const [properties, setProperties] = React.useState<PropertiesType>({});
+    const [properties, setProperties] = React.useState<Array<PropertyType>>([]);
 
     const fetchMockData = React.useCallback(async () => {
         const data = await import("../../../mock-data/properties");
-        const json = data.default as PropertiesType;
+        const json = data.default as Array<PropertyType>;
 
         setProperties(json);
     }, []);
@@ -34,32 +33,37 @@ const Properties: React.FC<PropertiesProps> = ({sort}: PropertiesProps) => {
 
     const showNewPropertyForm = () => setNewPropertyVisibility(true);
 
-    const onChange = (property: string, fieldName: string, value: string | boolean) => {
+    const onChange = (propertyName: string, fieldName: string, value: string | boolean) => {
         setProperties(() => {
-            return {
-                ...properties,
-                [property]: {
-                    ...properties[property],
-                    fields: [
-                        ...properties[property].fields.map(field => {
-                            if (field.fieldName === fieldName) {
-                                return { ...field, value: value as any }
-                            }
+            return [
+                ...properties.map(property => {
+                    if (property.name === propertyName) {
+                        return {
+                            ...property,
+                            fields: [
+                                ...property.fields.map(field => {
+                                    if (field.fieldName === fieldName) {
+                                        return { ...field, value: value as any }
+                                    }
 
-                            return field;
-                        })
-                    ]
-                }
-            }
+                                    return field;
+                                })
+                            ]
+                        }
+                    }
+
+                    return property;
+                })
+            ]
         })
     }
 
-    const onAddProperty = (property: PropertiesType) => {
+    const onAddProperty = (property: PropertyType) => {
         console.log(property);
     }
 
-    const sortProperties = (a: string, b: string) => {
-        return (a < b ? -1 : 1) * (sort === "desc" ? -1 : 1);
+    const sortProperties = (a: PropertyType, b: PropertyType) => {
+        return (a.name < b.name ? -1 : 1) * (sort === "desc" ? -1 : 1);
     }
 
     return (
@@ -75,12 +79,12 @@ const Properties: React.FC<PropertiesProps> = ({sort}: PropertiesProps) => {
             {newPropertyVisibility && <NewPropertyForm onAdd={onAddProperty}/>}
 
             <div className={styles.list}>
-                {Object.keys(properties).sort(sortProperties).map((property, index) => (
+                {properties.sort(sortProperties).map((property, index) => (
                     <Property
-                        propertyName={property}
-                        fields={properties[property].fields}
+                        propertyName={property.name}
+                        fields={property.fields}
                         onChange={onChange}
-                        disabled={properties[property].disabled}
+                        disabled={property.disabled}
                         key={index}
                     />
                 ))}

@@ -25,7 +25,7 @@ export type Field = InputType | TextAreaType | SelectType | SwitchType
 export type PropertyProps = {
     propertyName: string
     fields: Array<Field>
-    onChange: (property: string, fieldName: string, value: string | boolean) => void
+    onChange: (propertyName: string, fieldName: string, value: string | boolean) => void
     disabled: boolean
 }
 

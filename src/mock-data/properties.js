@@ -1,5 +1,6 @@
-const mockData = {
-    "Color": {
+const mockData = [
+    {
+        name: "Color",
         fields: [
             { fieldName: "Property name", type: "input", value: "Color" },
             { fieldName: "Display name", type: "input", value: "" },
@@ -11,7 +12,8 @@ const mockData = {
         ],
         disabled: false
     },
-    "Children": {
+    {
+        name: "Children",
         fields: [
             { fieldName: "Property name", type: "input", value: "Children" },
             { fieldName: "Display name", type: "input", value: "" },
@@ -22,7 +24,8 @@ const mockData = {
         ],
         disabled: false
     },
-    "Disabled": {
+    {
+        name: "Disabled",
         fields: [
             { fieldName: "Property name", type: "input", value: "Disabled" },
             { fieldName: "Display name", type: "input", value: "" },
@@ -32,7 +35,8 @@ const mockData = {
         ],
         disabled: false
     },
-    "Disable focus ripple": {
+    {
+        name: "Disable focus ripple",
         fields: [
             { fieldName: "Property name", type: "input", value: "Disable focus ripple" },
             { fieldName: "Display name", type: "input", value: "" },
@@ -42,7 +46,8 @@ const mockData = {
         ],
         disabled: true
     },
-    "Disable ripple": {
+    {
+        name: "Disable ripple",
         fields: [
             { fieldName: "Property name", type: "input", value: "Color" },
             { fieldName: "Display name", type: "input", value: "" },
@@ -52,7 +57,8 @@ const mockData = {
         ],
         disabled: true
     },
-    "Full width": {
+    {
+        name: "Full width",
         fields: [
             { fieldName: "Property name", type: "input", value: "Full width" },
             { fieldName: "Display name", type: "input", value: "" },
@@ -62,7 +68,8 @@ const mockData = {
         ],
         disabled: false
     },
-    "Mini": {
+    {
+        name: "Mini",
         fields: [
             { fieldName: "Property name", type: "input", value: "Mini" },
             { fieldName: "Display name", type: "input", value: "" },
@@ -72,7 +79,8 @@ const mockData = {
         ],
         disabled: false
     },
-    "Size": {
+    {
+        name: "Size",
         fields: [
             { fieldName: "Property name", type: "input", value: "Size" },
             { fieldName: "Display name", type: "input", value: "" },
@@ -83,7 +91,8 @@ const mockData = {
         ],
         disabled: false
     },
-    "Variant": {
+    {
+        name: "Variant",
         fields: [
             { fieldName: "Property name", type: "input", value: "Variant" },
             { fieldName: "Display name", type: "input", value: "" },
@@ -95,6 +104,6 @@ const mockData = {
         ],
         disabled: false
     }
-}
+]
 
 export default mockData;
