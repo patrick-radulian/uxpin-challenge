@@ -1,7 +1,7 @@
 import React from 'react';
 import * as CSS from "csstype"
 import styles from './icon-button.module.css';
-import { ReactSVG } from 'react-svg';
+import SVG from "react-inlinesvg";
 
 type IconButtonProps = {
     iconSrc: string
@@ -31,17 +31,9 @@ const IconButton: React.FC<IconButtonProps> = ({
         width: style?.width ? `${style.width}px` : "24px",
     }
 
-    const setSvgStyle = (svg: SVGSVGElement) => {
-        const width = `width: ${iconWidth}px`;
-        const height = `height: ${iconHeight}px`;
-        const fill = `fill: ${iconColor}`;
-
-        return svg.setAttribute("style", `${width}; ${height}; ${fill};`);
-    }
-
     return (
         <button onClick={onClick} className={`${styles['icon-button']} ${className ? className : ""}`} style={btnStyle}>
-            <ReactSVG src={iconSrc} beforeInjection={svg => setSvgStyle(svg)}/>
+            <SVG src={iconSrc} height={iconHeight} width={iconWidth} fill={iconColor}/>
         </button>
     )
 }
