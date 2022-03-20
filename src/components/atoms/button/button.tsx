@@ -15,8 +15,10 @@ type ButtonProps = {
 }
 
 const Button: React.FC<ButtonProps> = ({children, variant = "default", weight = "heavy", size, ...rest}: ButtonProps) => {
+    const className: string = `${style.button} ${variant} ${weight} ${size ? size : ""} ${rest.stretched ? "stretched" : ""}`;
+
     return (
-        <button className={`${style.button} ${variant} ${weight} ${size ? size : ""} ${rest.stretched ? "stretched" : ""}`} style={rest.style}>
+        <button className={className} onClick={rest.onClick} style={rest.style}>
             {rest.iconSrc && <img src={rest.iconSrc} alt=""/>}
             {children}
         </button>
