@@ -7,22 +7,133 @@
     position: absolute;
 }
 
+.triangle {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid var(--shade-hard);
+    position: absolute;
+}
+
+/*** TOP ***/
+:global(.tooltip):global(.top) {
+    left: 50%;
+    top: -6px;
+    transform: translate(-50%, -100%);
+}
+
+:global(.tooltip):global(.top) .triangle {
+    bottom: -5px;
+    left: calc(50% - 5px);
+    top: auto;
+    transform: rotate(180deg);
+}
+
+
+/*** TOP RIGHT ***/
+:global(.tooltip):global(.top.right) {
+    left: 50%;
+    right: auto;
+    top: -6px;
+    transform: translate(-10px, -100%);
+}
+
+:global(.tooltip):global(.top.right) .triangle {
+    bottom: 0;
+    left: 5px;
+    top: auto;
+    transform: rotate(180deg);
+    transform-origin: bottom;
+}
+
+
+/*** RIGHT ***/
+:global(.tooltip):global(.right) {
+    right: -6px;
+    top: 50%;
+    transform: translate(100%, -50%);
+}
+
+:global(.tooltip):global(.right) .triangle {
+    left: -4px;
+    top: calc(50% - 5px);
+    transform: rotate(-90deg);
+    transform-origin: bottom;
+}
+
+
+/*** BOTTOM RIGHT ***/
+:global(.tooltip):global(.bottom.right) {
+    bottom: -6px;
+    left: 50%;
+    right: auto;
+    top: auto;
+    transform: translate(-10px, 100%);
+}
+
+:global(.tooltip):global(.bottom.right) .triangle {
+    left: 5px;
+    top: -5px;
+    transform: rotate(0);
+}
+
+
+/*** BOTTOM ***/
 :global(.tooltip):global(.bottom) {
     top: calc(100% + 6px);
     left: 50%;
     transform: translate(-50%, 0);
 }
 
-.triangle {
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-bottom: 5px solid var(--shade-hard);
-    left: 8px;
-    position: absolute;
-    top: -5px;
-}
-
 :global(.tooltip):global(.bottom) .triangle {
     top: -5px;
     left: calc(50% - 5px);
+}
+
+
+/*** BOTTOM LEFT ***/
+:global(.tooltip):global(.bottom.left) {
+    bottom: -6px;
+    left: auto;
+    right: 50%;
+    top: auto;
+    transform: translate(10px, 100%);
+}
+
+:global(.tooltip):global(.bottom.left) .triangle {
+    left: auto;
+    right: 5px;
+    top: -5px;
+    transform: rotate(0);
+}
+
+
+/*** LEFT ***/
+:global(.tooltip):global(.left) {
+    left: -6px;
+    top: 50%;
+    transform: translate(-100%, -50%);
+}
+
+:global(.tooltip):global(.left) .triangle {
+    right: -4px;
+    top: calc(50% - 5px);
+    transform: rotate(90deg);
+    transform-origin: bottom;
+}
+
+
+/*** TOP LEFT ***/
+:global(.tooltip):global(.top.left) {
+    left: auto;
+    right: 50%;
+    top: -6px;
+    transform: translate(10px, -100%);
+}
+
+:global(.tooltip):global(.top.left) .triangle {
+    bottom: 0;
+    left: auto;
+    right: 5px;
+    top: auto;
+    transform: rotate(180deg);
 }

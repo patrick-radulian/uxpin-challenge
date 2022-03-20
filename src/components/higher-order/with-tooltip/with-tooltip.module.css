@@ -4,7 +4,7 @@
 }
 
 .wrapper:hover :global(.tooltip) {
-    display: block;
+    display: flex;
 }
 
 .with-tooltip {
