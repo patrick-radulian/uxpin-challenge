@@ -4,9 +4,9 @@ import React from "react"
 import styles from "./properties.module.css"
 import Plus from "icons/plus.svg";
 import Property, { Field } from "components/molecules/property/property";
-import NewProperty from "components/molecules/new-property/new-property";
+import NewPropertyForm from "components/molecules/new-property-form/new-property-form";
 
-type PropertiesType = {
+export type PropertiesType = {
     [key: string]: {
         fields: Array<Field>
         disabled: boolean
@@ -25,7 +25,6 @@ const Properties: React.FC<PropertiesProps> = ({sort}: PropertiesProps) => {
         const data = await import("../../../mock-data/properties");
         const json = data.default as PropertiesType;
 
-        console.log(json);
         setProperties(json);
     }, []);
 
@@ -36,19 +35,27 @@ const Properties: React.FC<PropertiesProps> = ({sort}: PropertiesProps) => {
     const showNewPropertyForm = () => setNewPropertyVisibility(true);
 
     const onChange = (property: string, fieldName: string, value: string | boolean) => {
-        const fieldIndex = properties[property].fields.findIndex(f => f.fieldName === fieldName);
-        const fields = properties[property].fields.slice();
-        fields[fieldIndex].value = value;
-
         setProperties(() => {
             return {
                 ...properties,
                 [property]: {
                     ...properties[property],
-                    fields
+                    fields: [
+                        ...properties[property].fields.map(field => {
+                            if (field.fieldName === fieldName) {
+                                return { ...field, value: value as any }
+                            }
+
+                            return field;
+                        })
+                    ]
                 }
             }
         })
+    }
+
+    const onAddProperty = (property: PropertiesType) => {
+        console.log(property);
     }
 
     const sortProperties = (a: string, b: string) => {
@@ -65,7 +72,7 @@ const Properties: React.FC<PropertiesProps> = ({sort}: PropertiesProps) => {
                 </Link>
             </div>
 
-            {newPropertyVisibility && <NewProperty/>}
+            {newPropertyVisibility && <NewPropertyForm onAdd={onAddProperty}/>}
 
             <div className={styles.list}>
                 {Object.keys(properties).sort(sortProperties).map((property, index) => (
