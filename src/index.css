@@ -3,7 +3,7 @@
 
 body,
 html {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 body {
@@ -16,7 +16,6 @@ body {
 
 #root {
     background: var(--silver-base);
-    height: 100%;
 }
 
 ::-webkit-scrollbar {
