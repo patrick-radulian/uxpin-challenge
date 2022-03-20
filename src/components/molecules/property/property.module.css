@@ -2,15 +2,17 @@
     align-items: start;
     border-bottom: 1px solid var(--silver-darken5);
     box-sizing: border-box;
+    column-gap: 15px;
     cursor: pointer;
     display: grid;
-    grid-template-columns: 1fr auto auto;
+    grid-template-columns: 1fr auto;
     height: 47px;
     padding: 0 20px;
 }
 
 .property:global(.open) {
     cursor: default;
+    grid-template-columns: 1fr 513px auto;
     height: auto;
     padding: 0 20px 9px;
 }
