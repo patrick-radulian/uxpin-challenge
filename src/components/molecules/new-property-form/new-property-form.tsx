@@ -72,7 +72,7 @@ const NewPropertyForm: React.FC<NewPropertyProps> = ({onClose, onAdd}: NewProper
     const onClickAdd = (e: React.MouseEvent<HTMLButtonElement>) => onAdd(property);
 
     return (
-        <div>
+        <div className={styles["new-property"]}>
             <PropertyBody fields={property.fields} onChange={onChange}/>
 
             <div className={styles.actions}>
