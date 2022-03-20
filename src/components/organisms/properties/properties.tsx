@@ -61,7 +61,14 @@ const Properties: React.FC<PropertiesProps> = ({sort}: PropertiesProps) => {
     }
 
     const onAddProperty = (property: PropertyType) => {
-        console.log(property);
+        setProperties(() => {
+            return [
+                ...properties,
+                property
+            ]
+        });
+
+        setNewPropertyVisibility(false);
     }
 
     const sortProperties = (a: PropertyType, b: PropertyType) => {
