@@ -3,7 +3,7 @@ import styles from "./typography.module.css";
 import * as CSS from "csstype"
 
 type TypographyProps = {
-    children?: string
+    children?: string | number
     variant?: "base" | "small" | "h2" | "h4" | "h6",
     style?: CSS.Properties
     className?: string
