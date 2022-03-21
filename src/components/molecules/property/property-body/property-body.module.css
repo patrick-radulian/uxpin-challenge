@@ -1,7 +1,7 @@
 .fields {
     display: grid;
     font-size: 14px;
-    gap: 10px;
+    gap: 12px;
     padding: 12px 0;
     width: 513px;
 }
