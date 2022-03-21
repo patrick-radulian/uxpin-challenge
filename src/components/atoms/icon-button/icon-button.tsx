@@ -27,8 +27,8 @@ const IconButton: React.FC<IconButtonProps> = ({
 
     const btnStyle: CSS.Properties<string | number> = {
         ...style,
-        height: style?.height ? `${style.height}px` : "24px",
-        width: style?.width ? `${style.width}px` : "24px",
+        height: style?.height ? `${style.height}` : "24px",
+        width: style?.width ? `${style.width}` : "24px",
     }
 
     return (
