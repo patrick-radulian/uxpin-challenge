@@ -10,16 +10,12 @@ import Link from "components/atoms/link/link"
 import ZoomControl, { ZoomType } from "components/atoms/zoom-control/zoom-control";
 import Tabs, { TabType } from "components/atoms/tabs/tabs";
 
-type UXPinHeaderProps = {
-
-}
-
 const HeaderTabs: Array<TabType> = [
     { label: "Simulate", icon: <SVG src={ArrowPlay} width={10} height={10}/> },
     { label: "Spec", icon: <SVG src={CodeBlock} width={12} height={12}/> }
 ]
 
-const UXPinHeader: React.FC<UXPinHeaderProps> = (props: UXPinHeaderProps) => {
+const UXPinHeader: React.FC<{}> = () => {
     const [zoom, setZoom] = React.useState<number>(100);
     const [activeTab, setActiveTab] = React.useState<number>(0);
 
