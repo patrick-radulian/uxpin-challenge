@@ -9,8 +9,8 @@
     text-decoration: none;
 }
 
-.link-text {
-
+.link:global(.hasLink) {
+    color: var(--blue-base);
 }
 
 .link-decoration {

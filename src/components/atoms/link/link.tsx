@@ -29,10 +29,10 @@ const Link: React.FC<LinkProps> = ({
     const icon = iconSrc ? <SVG src={iconSrc} height={iconHeight} width={iconWidth} fill="currentColor"/> : null;
 
     return (
-        <a className={styles.link} {...(href && { href })} onClick={onClick} style={style}>
+        <a className={`${styles.link} ${href ? "hasLink" : ""}`} {...(href && { href })} onClick={onClick} style={style}>
             {icon && iconPosition === "start" && icon}
 
-            <div className={styles["link-text"]}>
+            <div>
                 {children}
                 {underline && <div className={styles["link-decoration"]}></div>}
             </div>
