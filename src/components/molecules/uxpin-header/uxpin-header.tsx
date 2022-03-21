@@ -8,9 +8,7 @@ import CodeBlock from "icons/code-block.svg";
 import IconButton from "components/atoms/icon-button/icon-button"
 import Link from "components/atoms/link/link"
 import ZoomControl, { ZoomType } from "components/atoms/zoom-control/zoom-control";
-import Button from "components/atoms/button/button";
 import Tabs, { TabType } from "components/atoms/tabs/tabs";
-import Tab from "components/atoms/tab/tab";
 
 type UXPinHeaderProps = {
 
