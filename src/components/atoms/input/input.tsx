@@ -7,11 +7,12 @@ type InputProps = {
     value?: string
     placeholder?: string
     style?: CSS.Properties
+    className?: string
 }
 
-const Input: React.FC<InputProps> = ({onChange, value, placeholder, style}: InputProps) => {
+const Input: React.FC<InputProps> = ({onChange, value, placeholder, style, className}: InputProps) => {
     return (
-        <input onChange={onChange} type="text" className={styles.input} value={value} style={style} placeholder={placeholder}/>
+        <input onChange={onChange} type="text" className={`${className ? className : ""} ${styles.input}`} value={value} style={style} placeholder={placeholder}/>
     )
 }
 
