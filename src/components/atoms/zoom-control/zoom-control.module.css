@@ -1,0 +1,48 @@
+.zoom-control {
+    align-items: center;
+    display: grid;
+    gap: 1px;
+    grid-template-columns: 20px 46px 20px;
+    height: 28px;
+    width: 88px;
+}
+
+.zoom-control:hover {
+    box-shadow: inset 0 0 0 1px var(--silver-darken5), inset 0 1px 2px rgb(0 0 0 / 13%);
+}
+
+.zoom-action {
+    align-items: center;
+    background: transparent;
+    box-sizing: border-box;
+    color: #8F8F8F;
+    cursor: pointer;
+    display: flex;
+    font-size: 12px;
+    height: 28px;
+    justify-content: center;
+    line-height: 28px;
+    padding: 0;
+    visibility: hidden;
+    width: 20px;
+}
+
+.zoom-control:hover .zoom-action {
+    visibility: visible;
+}
+
+.zoom-action:hover {
+    background: var(--silver-darken1);
+}
+
+.zoom-status {
+    background: transparent;
+    border-bottom: 1px solid var(--silver-darken5);
+    box-sizing: border-box;
+    font-size: 12px;
+    height: 28px;
+    line-height: 28px;
+    padding: 0;
+    text-align: center;
+    width: auto;
+}
