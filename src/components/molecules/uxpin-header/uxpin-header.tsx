@@ -9,13 +9,21 @@ import IconButton from "components/atoms/icon-button/icon-button"
 import Link from "components/atoms/link/link"
 import ZoomControl, { ZoomType } from "components/atoms/zoom-control/zoom-control";
 import Button from "components/atoms/button/button";
+import Tabs, { TabType } from "components/atoms/tabs/tabs";
+import Tab from "components/atoms/tab/tab";
 
 type UXPinHeaderProps = {
 
 }
 
+const HeaderTabs: Array<TabType> = [
+    { label: "Simulate", icon: <SVG src={ArrowPlay} width={10} height={10}/> },
+    { label: "Spec", icon: <SVG src={CodeBlock} width={12} height={12}/> }
+]
+
 const UXPinHeader: React.FC<UXPinHeaderProps> = (props: UXPinHeaderProps) => {
     const [zoom, setZoom] = React.useState<number>(100);
+    const [activeTab, setActiveTab] = React.useState<number>(0);
 
     const decreaseBy25 = React.useCallback((n: number) => n - 25, []);
     const increaseBy25 = React.useCallback((n: number) => n + 25, []);
@@ -41,18 +49,15 @@ const UXPinHeader: React.FC<UXPinHeaderProps> = (props: UXPinHeaderProps) => {
         })
     }
 
+    const onChangeTabs = (e: React.MouseEvent<HTMLButtonElement>, index: number) => setActiveTab(index);
+
     return (
         <div className={styles.header}>
             <div className={styles["start-actions"]}>
                 <Link href="#">Sign in</Link>
             </div>
             <div className={styles["main-actions"]}>
-                <div>
-                    <Button icon={<SVG src={ArrowPlay} width={10} height={10}/>} variant="neutral" weight="light" style={{background: "transparent", color: "var(--blue-base)"}}>Simulate</Button>
-                </div>
-                <div>
-                    <Button icon={<SVG src={CodeBlock} width={12} height={12}/>} variant="neutral" weight="light" style={{color: "var(--gray-lighten10)"}}>Spec</Button>
-                </div>
+                <Tabs tabs={HeaderTabs} activeTab={activeTab} onChange={onChangeTabs}/>
             </div>
             <div className={styles["end-actions"]}>
                 <ZoomControl zoom={zoom} onChange={onChangeZoom} style={{marginRight: "30px"}}/>

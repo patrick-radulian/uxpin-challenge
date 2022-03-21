@@ -20,7 +20,8 @@
 }
 
 .main-actions {
-    align-items: center;
+    align-items: stretch;
+    align-self: stretch;
     display: flex;
     justify-self: center;
 }

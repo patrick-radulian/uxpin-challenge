@@ -1,0 +1,25 @@
+.tab {
+    align-items: center;
+    background: transparent;
+    border: none;
+    color: var(--gray-lighten15);
+    cursor: pointer;
+    display: flex;
+    font-size: 14px;
+    gap: 7px;
+    padding: 0 10px;
+}
+
+.tab:global(.active) {
+    border-bottom: 1px solid var(--blue-base);
+    color: var(--blue-base);
+    cursor: default;
+}
+
+.tab:not(:global(.active)):hover {
+    border-bottom: 1px solid var(--gray-lighten15);
+}
+
+.tab svg {
+    fill: currentColor
+}
