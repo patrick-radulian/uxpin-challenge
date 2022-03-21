@@ -21,7 +21,7 @@ const Tabs: React.FC<TabsProps> = ({tabs, activeTab, onChange}: TabsProps) => {
     return (
         <div className={styles.tabs}>
             {tabs.map((tab: TabType, index: number) => (
-                <Tab label={tab.label} onClick={e => onClick(e, index)} icon={tab.icon} iconPosition={tab.iconPosition} active={index === activeTab}/>
+                <Tab label={tab.label} onClick={e => onClick(e, index)} icon={tab.icon} iconPosition={tab.iconPosition} active={index === activeTab} key={index}/>
             ))}
         </div>
     )
