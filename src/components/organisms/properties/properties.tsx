@@ -100,7 +100,7 @@ const Properties: React.FC<PropertiesProps> = ({sort}: PropertiesProps) => {
 
             {newPropertyVisibility && <NewPropertyForm onClose={hideNewPropertyForm} onAdd={onAddProperty}/>}
 
-            <div className={styles.list}>
+            <div>
                 {properties.sort(sortProperties).map((property, index) => (
                     <Property
                         propertyName={property.name}

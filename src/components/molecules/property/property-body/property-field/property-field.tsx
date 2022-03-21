@@ -5,7 +5,7 @@ import Switch from "components/atoms/switch/switch"
 import TextArea from "components/atoms/text-area/text-area"
 import Typography from "components/atoms/typography/typography"
 import React from "react"
-import { FieldInput, FieldType, HintLinkType, HintTextType, SelectInput, SwitchInput, TextAreaInput, TextInput } from "../../property"
+import { FieldType, HintLinkType, HintTextType, SelectInput, SwitchInput, TextAreaInput, TextInput } from "../../property"
 import styles from "./property-field.module.css"
 
 type Props = {
@@ -66,7 +66,7 @@ const PropertyField = ({field, onChange}: Props) => {
     )
 
     return (
-        <div className={styles["property-field"]}>
+        <div>
             <div className={styles["property-field-body"]}>
                 <Typography>{field.fieldName}</Typography>
 

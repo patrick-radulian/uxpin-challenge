@@ -1,7 +1,6 @@
 import React from "react"
 import * as CSS from "csstype"
 import styles from "./zoom-control.module.css"
-import Typography from "../typography/typography"
 import Input from "../input/input"
 
 type ZoomControlProps = {
@@ -20,7 +19,6 @@ const ZoomControl: React.FC<ZoomControlProps> = ({zoom, onChange, style}: ZoomCo
         <div className={styles["zoom-control"]} style={style}>
             <div onClick={onZoomOut} className={styles["zoom-action"]}>-</div>
             <Input onChange={onChange} value={`${zoom}%`} className={styles["zoom-status"]}/>
-            {/* <Typography className={styles["zoom-status"]} style={{lineHeight: "28px"}}>{`${zoom}%`}</Typography> */}
             <div onClick={onZoomIn} className={styles["zoom-action"]}>+</div>
         </div>
     )

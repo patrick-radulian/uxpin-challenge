@@ -44,8 +44,6 @@ const newProperty: PropertyType = {
     disabled: false
 }
 
-
-
 const NewPropertyForm: React.FC<NewPropertyProps> = ({onClose, onAdd}: NewPropertyProps) => {
     const [property, setProperty] = React.useState<PropertyType>(newProperty);
 

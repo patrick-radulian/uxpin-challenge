@@ -14,7 +14,6 @@ type TabsProps = {
     onChange: (e: React.MouseEvent<HTMLButtonElement>, index: number) => void
 }
 
-
 const Tabs: React.FC<TabsProps> = ({tabs, activeTab, onChange}: TabsProps) => {
     const onClick = (e: React.MouseEvent<HTMLButtonElement>, index: number) => onChange(e, index);
 
