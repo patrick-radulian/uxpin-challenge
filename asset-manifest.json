@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/uxpin-challenge/static/css/main.b5a2982c.css",
+    "main.js": "/uxpin-challenge/static/js/main.2f51c5a4.js",
+    "static/js/943.3b37b6d8.chunk.js": "/uxpin-challenge/static/js/943.3b37b6d8.chunk.js",
+    "static/media/trash.svg": "/uxpin-challenge/static/media/trash.20a49175da2425966cd18ec313091294.svg",
+    "static/media/code-block.svg": "/uxpin-challenge/static/media/code-block.298ca12fb9dc399f3fbdd1b742cb3164.svg",
+    "static/media/gear.svg": "/uxpin-challenge/static/media/gear.ab866e9d7cfc24c21c45ef8aee5eb2d2.svg",
+    "index.html": "/uxpin-challenge/index.html",
+    "static/media/visibility-hidden.svg": "/uxpin-challenge/static/media/visibility-hidden.09ef40604512c391c491cbb16d5c273e.svg",
+    "static/media/layout-medium-tile-outline.svg": "/uxpin-challenge/static/media/layout-medium-tile-outline.705bcb8261e4d0aa6ba8c5873b802f53.svg",
+    "static/media/chevron.svg": "/uxpin-challenge/static/media/chevron.bea17427211d664f0952ac7a18dece04.svg",
+    "static/media/visibility-visible.svg": "/uxpin-challenge/static/media/visibility-visible.5b263463973cb49d767510d2e06d58d0.svg",
+    "static/media/action-full-screen.svg": "/uxpin-challenge/static/media/action-full-screen.3a229da855c9f4c61515f09e8c197071.svg",
+    "static/media/arrow-play.svg": "/uxpin-challenge/static/media/arrow-play.633ccd90e0e7b2d772a00c7b5a8521eb.svg",
+    "static/media/action-close.svg": "/uxpin-challenge/static/media/action-close.2289cc7d8541c15fc436cc9e3a44ada9.svg",
+    "static/media/plus.svg": "/uxpin-challenge/static/media/plus.c3654d39c4bd4342c9a6144bd4b28d00.svg",
+    "static/media/thunder.svg": "/uxpin-challenge/static/media/thunder.a54be1254d18f0e132312d3c7a99ff8a.svg",
+    "main.b5a2982c.css.map": "/uxpin-challenge/static/css/main.b5a2982c.css.map",
+    "main.2f51c5a4.js.map": "/uxpin-challenge/static/js/main.2f51c5a4.js.map",
+    "943.3b37b6d8.chunk.js.map": "/uxpin-challenge/static/js/943.3b37b6d8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b5a2982c.css",
+    "static/js/main.2f51c5a4.js"
+  ]
+}
